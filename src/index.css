@@ -9,25 +9,42 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 212 21% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 212 21% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 212 21% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 208 100% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 29% 97%;
+    --secondary-foreground: 212 21% 14%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 29% 97%;
+    --muted-foreground: 212 13% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 195 91% 56%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Medical/Corporate theme colors */
+    --medical-blue: 208 100% 35%;
+    --medical-cyan: 195 91% 56%;
+    --medical-navy: 212 84% 20%;
+    --corporate-gray: 214 13% 93%;
+    --text-muted: 212 13% 46%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(208 100% 35%), hsl(195 91% 56%));
+    --gradient-hero: linear-gradient(135deg, hsl(208 100% 35% / 0.95), hsl(195 91% 56% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 29% 97%), hsl(0 0% 100%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 10px hsl(208 100% 35% / 0.1);
+    --shadow-medium: 0 8px 25px hsl(208 100% 35% / 0.15);
+    --shadow-glow: 0 0 30px hsl(195 91% 56% / 0.3);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
