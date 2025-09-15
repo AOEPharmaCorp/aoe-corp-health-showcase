@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <Building2 className="w-8 h-8 text-accent" />
               <div>
-                <h3 className="text-2xl font-bold">APC AOE</h3>
+                <h3 className="text-2xl font-bold">AOE</h3>
                 <p className="text-sm font-medium text-accent">PHARMA CORPORATION</p>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              © 2024 APC AOE Pharma Corporation. All rights reserved.
+              © 2024 AOE Pharma Corporation. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-white/70">
               <span>Quality Assured</span>
