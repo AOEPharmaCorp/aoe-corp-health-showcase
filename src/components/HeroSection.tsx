@@ -2,15 +2,12 @@ import { ArrowRight, Globe, Shield, Zap } from "lucide-react";
 import { Button } from "./ui/button";
 import heroLabImage from "@/assets/hero-lab.jpg";
 import brandImage from "@/assets/aoe-pharma-brand.jpg";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-hero"></div>
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: `url(${heroLabImage})` }}
-      ></div>
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
+      backgroundImage: `url(${heroLabImage})`
+    }}></div>
       
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -22,25 +19,15 @@ const HeroSection = () => {
                   Global Healthcare
                 </span>
               </h1>
-              <p className="text-xl text-white/90 leading-relaxed">
-                Leading provider of high-quality, affordable healthcare solutions across Asia, GCC, and MENA regions. 
-                Enhancing quality of life through innovative pharmaceutical products since 2018.
-              </p>
+              <p className="text-xl text-white/90 leading-relaxed">Leading provider of high-quality, affordable healthcare solutions globally. Enhancing quality of life through innovative pharmaceutical products since 2018.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-white shadow-glow group"
-              >
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white shadow-glow group">
                 Explore Our Products 
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
-              >
+              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
                 Global Operations
               </Button>
             </div>
@@ -67,17 +54,11 @@ const HeroSection = () => {
           <div className="flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 rounded-2xl blur-xl"></div>
-              <img 
-                src={brandImage} 
-                alt="APC AOE Pharma Corporation - Molecular Innovation"
-                className="relative rounded-2xl shadow-2xl max-w-md w-full"
-              />
+              <img src={brandImage} alt="APC AOE Pharma Corporation - Molecular Innovation" className="relative rounded-2xl shadow-2xl max-w-md w-full" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
