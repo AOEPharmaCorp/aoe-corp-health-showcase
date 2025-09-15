@@ -23,7 +23,11 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white shadow-glow group">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-white shadow-glow group"
+                onClick={() => window.location.href = '/products'}
+              >
                 Explore Our Products 
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -40,8 +44,8 @@ const HeroSection = () => {
               </div>
               <div className="text-center">
                 <Shield className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">ISO Certified</div>
-                <div className="text-sm text-white/70">Quality Assured</div>
+                <div className="text-2xl font-bold text-white">Fully Compliant</div>
+                <div className="text-sm text-white/70">EU, USFDA, WHO GMP</div>
               </div>
               <div className="text-center">
                 <Zap className="w-8 h-8 text-accent mx-auto mb-2" />

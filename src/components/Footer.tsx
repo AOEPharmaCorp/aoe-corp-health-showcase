@@ -29,8 +29,8 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
                 <div>
-                  <p className="text-white/90">Regional Offices</p>
-                  <p className="text-sm text-white/70">India & UAE</p>
+                  <p className="text-white/90">Trade Centre 1, Sheikh Zayed Road</p>
+                  <p className="text-sm text-white/70">Dubai, UAE</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -43,13 +43,13 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <div>
-                  <p className="text-white/90">info@aoepharma.com</p>
+                  <p className="text-white/90">info@aoepharma.ae</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <div>
-                  <p className="text-white/90">Global Operations</p>
+                  <p className="text-white/90">+971-488-29480</p>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="flex items-center gap-6 text-sm text-white/70">
               <span>Quality Assured</span>
               <span>•</span>
-              <span>ISO Certified</span>
+              <span>EU, USFDA, WHO GMP Compliant</span>
               <span>•</span>
               <span>Globally Trusted</span>
             </div>
