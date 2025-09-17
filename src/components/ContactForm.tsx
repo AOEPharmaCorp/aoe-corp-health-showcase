@@ -1,0 +1,298 @@
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { Checkbox } from "./ui/checkbox";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useToast } from "./ui/use-toast";
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    organization: "",
+    subject: "",
+    message: "",
+    contactMethod: "email",
+    consent: false
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.consent) {
+      toast({
+        title: "Consent Required",
+        description: "Please agree to the Privacy Policy and Terms of Service.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Thank You!",
+        description: "We've received your inquiry and will get back to you as soon as possible.",
+      });
+      setIsSubmitting(false);
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        organization: "",
+        subject: "",
+        message: "",
+        contactMethod: "email",
+        consent: false
+      });
+    }, 2000);
+  };
+
+  const productCategories = [
+    "Product Information",
+    "Pharmaceutical Products",
+    "Specialty Medicines", 
+    "Generic Medications",
+    "Active Pharmaceutical Ingredients",
+    "Cosmeceuticals",
+    "Partnership Inquiry",
+    "Technical Support",
+    "General Questions",
+    "Feedback"
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Contact Us</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ready to partner with us or learn more about our pharmaceutical solutions? 
+              Get in touch with our team of experts.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <Card className="border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary">Get In Touch</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <Mail className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Email</p>
+                      <p className="text-muted-foreground">info@aoepharma.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <Phone className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Phone</p>
+                      <p className="text-muted-foreground">+971-488-29480</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Address</p>
+                      <p className="text-muted-foreground">
+                        Trade Centre 1, Sheikh Zayed Road<br />
+                        Dubai, UAE
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-accent/20">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">Business Hours</h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM GST</p>
+                    <p>Saturday: 9:00 AM - 1:00 PM GST</p>
+                    <p>Sunday: Closed</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <Card className="shadow-elegant">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-primary">Send Us Your Inquiry</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="fullName" className="text-base font-medium">
+                          Your Full Name *
+                        </Label>
+                        <Input
+                          id="fullName"
+                          required
+                          value={formData.fullName}
+                          onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
+                          className="h-12"
+                          placeholder="Enter your full name"
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-base font-medium">
+                          Your Email Address *
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                          className="h-12"
+                          placeholder="your.email@company.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="phone" className="text-base font-medium">
+                          Your Phone Number (Optional)
+                        </Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                          className="h-12"
+                          placeholder="+971 XX XXX XXXX"
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="organization" className="text-base font-medium">
+                          Your Organization (Optional)
+                        </Label>
+                        <Input
+                          id="organization"
+                          value={formData.organization}
+                          onChange={(e) => setFormData(prev => ({ ...prev, organization: e.target.value }))}
+                          className="h-12"
+                          placeholder="Company or organization name"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="subject" className="text-base font-medium">
+                        Subject of Your Inquiry *
+                      </Label>
+                      <Select
+                        value={formData.subject}
+                        onValueChange={(value) => setFormData(prev => ({ ...prev, subject: value }))}
+                        required
+                      >
+                        <SelectTrigger className="h-12">
+                          <SelectValue placeholder="Select inquiry type" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-background border-border">
+                          {productCategories.map((category) => (
+                            <SelectItem key={category} value={category}>
+                              {category}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-base font-medium">
+                        Your Message *
+                      </Label>
+                      <Textarea
+                        id="message"
+                        required
+                        value={formData.message}
+                        onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                        placeholder="Please provide details about your inquiry, including specific products or services you're interested in..."
+                        className="min-h-[120px]"
+                      />
+                    </div>
+
+                    <div className="space-y-4">
+                      <Label className="text-base font-medium">
+                        How would you like to be contacted? (Optional)
+                      </Label>
+                      <RadioGroup
+                        value={formData.contactMethod}
+                        onValueChange={(value) => setFormData(prev => ({ ...prev, contactMethod: value }))}
+                        className="flex gap-6"
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="email" id="email-contact" />
+                          <Label htmlFor="email-contact">Email</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="phone" id="phone-contact" />
+                          <Label htmlFor="phone-contact">Phone</Label>
+                        </div>
+                      </RadioGroup>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <Checkbox
+                        id="consent"
+                        checked={formData.consent}
+                        onCheckedChange={(checked) => 
+                          setFormData(prev => ({ ...prev, consent: checked as boolean }))
+                        }
+                        className="mt-1"
+                      />
+                      <Label 
+                        htmlFor="consent" 
+                        className="text-sm leading-relaxed cursor-pointer"
+                      >
+                        I agree to the Privacy Policy and Terms of Service, and consent to AOE Pharma 
+                        Corporation processing my personal data for the purpose of responding to my inquiry. *
+                      </Label>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={isSubmitting}
+                      className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white shadow-glow group"
+                    >
+                      {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+                      <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactForm;

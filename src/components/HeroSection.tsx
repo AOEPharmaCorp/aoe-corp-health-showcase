@@ -27,7 +27,7 @@ const HeroSection = () => {
                 Explore Our Products 
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm bg-sky-500 hover:bg-sky-400">Our Customer</Button>
+              <Button variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm bg-sky-500 hover:bg-sky-400" onClick={() => window.location.href = '/contact'}>Contact Us</Button>
             </div>
             
             <div className="grid grid-cols-3 gap-6 pt-8">
