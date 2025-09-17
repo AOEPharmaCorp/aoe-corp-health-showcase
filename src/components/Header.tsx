@@ -6,13 +6,13 @@ import companyLogo from "@/assets/company-logo.png";
 const Header = () => {
   return (
     <header className="bg-white shadow-soft sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img 
               src={companyLogo} 
               alt="APC AOE Pharma Corporation" 
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </div>
           

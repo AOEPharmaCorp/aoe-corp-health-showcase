@@ -9,7 +9,7 @@ const Footer = () => {
               <img 
                 src={companyLogo} 
                 alt="APC AOE Pharma Corporation" 
-                className="h-16 w-auto object-contain brightness-0 invert"
+                className="h-20 w-auto object-contain filter contrast-125"
               />
             </div>
             <p className="text-white/80 max-w-md leading-relaxed">
