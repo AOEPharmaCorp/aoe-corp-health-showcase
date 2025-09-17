@@ -1,18 +1,13 @@
 import { MapPin, Building, Users, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
-
 const GlobalOperations = () => {
-  return (
-    <section className="py-20 bg-medical-navy text-white">
+  return <section className="py-20 bg-medical-navy text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Global Operations & Markets
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            Strategically positioned across key regions to serve diverse healthcare needs 
-            with offices in India & UAE and operations spanning Asia, GCC, and MENA.
-          </p>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">Strategically positioned across key regions to serve diverse healthcare needs with offices in India &amp; UAE and operations spanning Asia, GCC, West Africa, Eastern EU and the UAE.</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -94,8 +89,6 @@ const GlobalOperations = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default GlobalOperations;
