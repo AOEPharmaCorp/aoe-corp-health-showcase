@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <img src={companyLogo} alt="APC AOE Pharma Corporation" className="h-20 w-auto object-contain filter contrast-125" />
             </div>
-            <p className="text-white/80 max-w-md leading-relaxed">Leading global provider of high-quality, affordable healthcare solutions. We are committed to enhancing quality of life through innovative pharmaceutical products and strategic services, with a strong presence across Western Africa, Eastern Europe, the UAE, and the wider GCC region.</p>
+            <p className="text-white/80 max-w-md leading-relaxed">Leading global provider of high-quality, affordable healthcare solutions. We are committed to enhancing quality of life through innovative pharmaceutical products and strategic services, with a strong presence across Asia, Western Africa, Eastern Europe, the UAE, and the wider GCC region.</p>
             <div className="text-sm text-accent font-medium">
               Rising Strong in Global Healthcare Since 2018
             </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <Globe className="w-5 h-5 text-accent flex-shrink-0" />
                 <div>
                   <p className="text-white/90">Operations</p>
-                  <p className="text-sm text-white/70">Asia, GCC, MENA</p>
+                  <p className="text-sm text-white/70">Asia, GCC, West Africa, Eastern EU, UAE</p>
                 </div>
               </div>
               
