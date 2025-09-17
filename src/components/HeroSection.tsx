@@ -23,17 +23,11 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-white shadow-glow group"
-                onClick={() => window.location.href = '/products'}
-              >
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white shadow-glow group" onClick={() => window.location.href = '/products'}>
                 Explore Our Products 
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                Global Operations
-              </Button>
+              <Button variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm bg-sky-500 hover:bg-sky-400">Our Customer</Button>
             </div>
             
             <div className="grid grid-cols-3 gap-6 pt-8">
