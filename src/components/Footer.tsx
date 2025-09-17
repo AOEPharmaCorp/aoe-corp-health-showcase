@@ -6,17 +6,9 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-4">
-              <img 
-                src={companyLogo} 
-                alt="APC AOE Pharma Corporation" 
-                className="h-20 w-auto object-contain filter contrast-125"
-              />
+              <img src={companyLogo} alt="APC AOE Pharma Corporation" className="h-20 w-auto object-contain filter contrast-125" />
             </div>
-            <p className="text-white/80 max-w-md leading-relaxed">
-              Leading global provider of high-quality, affordable healthcare solutions. 
-              Committed to enhancing quality of life through innovative pharmaceutical products 
-              and services across Asia, GCC, and MENA regions.
-            </p>
+            <p className="text-white/80 max-w-md leading-relaxed">Leading global provider of high-quality, affordable healthcare solutions. We are committed to enhancing quality of life through innovative pharmaceutical products and strategic services, with a strong presence across Western Africa, Eastern Europe, the UAE, and the wider GCC region.</p>
             <div className="text-sm text-accent font-medium">
               Rising Strong in Global Healthcare Since 2018
             </div>
