@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 bg-slate-50 my-0">
               <img src={companyLogo} alt="APC AOE Pharma Corporation" className="h-20 w-auto object-contain filter contrast-125" />
             </div>
             <p className="text-white/80 max-w-md leading-relaxed">Leading global provider of high-quality, affordable healthcare solutions. We are committed to enhancing quality of life through innovative pharmaceutical products and strategic services, with a strong presence across Asia, Western Africa, Eastern Europe, the UAE, and the wider GCC region.</p>

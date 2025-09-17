@@ -33,7 +33,7 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
                 <Globe className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">Asia, GCC, MENA</div>
+                <div className="text-2xl font-bold text-white">Asia, W. Africa, E. EU & GCC</div>
                 <div className="text-sm text-white/70">Global Reach</div>
               </div>
               <div className="text-center">
@@ -44,7 +44,8 @@ Compliant</div>
               </div>
               <div className="text-center">
                 <Zap className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">2018</div>
+                <div className="text-2xl font-bold text-white">Since 
+2018</div>
                 <div className="text-sm text-white/70">Established</div>
               </div>
             </div>
