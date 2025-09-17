@@ -38,7 +38,8 @@ const HeroSection = () => {
               </div>
               <div className="text-center">
                 <Shield className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">Fully Compliant</div>
+                <div className="text-2xl font-bold text-white">Fully 
+Compliant</div>
                 <div className="text-sm text-white/70">EU, USFDA, WHO GMP</div>
               </div>
               <div className="text-center">
