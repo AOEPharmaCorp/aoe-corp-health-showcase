@@ -7,19 +7,19 @@ const FindUsOn = () => {
     {
       name: "SAP Ariba",
       logo: sapAribaLogo,
-      url: "#",
+      url: "https://service.ariba.com/",
       description: "Global procurement platform"
     },
     {
       name: "Zakupivli.pro",
       logo: zakupivliLogo,
-      url: "#", 
+      url: "https://zakupivli.pro/en", 
       description: "Professional procurement network"
     },
     {
       name: "ProZorro",
       logo: prozorroLogo,
-      url: "#",
+      url: "https://prozorro.gov.ua/en",
       description: "Transparent public procurement"
     }
   ];
