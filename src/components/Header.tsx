@@ -14,15 +14,12 @@ const Header = () => {
           <nav className="flex flex-col lg:flex-row lg:items-center gap-6">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="w-4 h-4" />
-              <span>India & UAE | Asia, GCC, MENA</span>
+              <span>India & UAE </span>
             </div>
+            
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="w-4 h-4" />
-              <span>Global Operations</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Mail className="w-4 h-4" />
-              <span>info@aoepharma.com</span>
+              
+              
             </div>
           </nav>
         </div>
