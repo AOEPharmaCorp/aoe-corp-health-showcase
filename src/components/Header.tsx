@@ -12,7 +12,7 @@ const Header = () => {
             <img 
               src={companyLogo} 
               alt="APC AOE Pharma Corporation" 
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </div>
           

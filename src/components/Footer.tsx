@@ -1,15 +1,16 @@
 import { Building2, Mail, MapPin, Phone, Globe } from "lucide-react";
+import companyLogo from "@/assets/company-logo.png";
 const Footer = () => {
   return <footer className="bg-foreground text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-4">
-              <Building2 className="w-8 h-8 text-accent" />
-              <div>
-                <h3 className="text-2xl font-bold">AOE</h3>
-                <p className="text-sm font-medium text-accent">PHARMA CORPORATION</p>
-              </div>
+              <img 
+                src={companyLogo} 
+                alt="APC AOE Pharma Corporation" 
+                className="h-16 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-white/80 max-w-md leading-relaxed">
               Leading global provider of high-quality, affordable healthcare solutions. 
