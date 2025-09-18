@@ -4,173 +4,99 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 
 // Comprehensive product data from the Excel file
-const productCategories = [
-  {
-    title: "Tablets",
-    icon: Pill,
-    count: 50,
-    description: "Comprehensive range of oral solid dosage forms",
-    products: [
-      "Amlodipine & Telmisartan Combination",
-      "Amlodipine Besylate (5mg, 10mg)",
-      "Atorvastatin (10mg, 20mg)",
-      "Azithromycin (250mg, 500mg)",
-      "Ciprofloxacin 500mg",
-      "Clarithromycin 500mg",
-      "Clopidogrel 75mg",
-      "Esomeprazole (20mg, 40mg)",
-      "Fluconazole (100mg, 200mg)",
-      "Glimepiride & Metformin Combination",
-      "Hydrochlorothiazide 25mg",
-      "Levofloxacin (250mg, 500mg)",
-      "Losartan Potassium (25mg, 50mg, 100mg)",
-      "Losartan & HCTZ Combination",
-      "Pioglitazone (15mg, 30mg)",
-      "Rosuvastatin (10mg, 20mg)",
-      "Tadalafil 20mg",
-      "Telmisartan (40mg, 80mg)",
-      "Telmisartan & HCTZ Combination",
-      "Celecoxib 200mg",
-      "Cetrizine HCL",
-      "Clobazam 10mg",
-      "Clomifene 50mg",
-      "Cotrimoxazole 480mg",
-      "Domperidone 10mg",
-      "Tacrolimus (0.5mg, 1mg)"
-    ]
-  },
-  {
-    title: "Softgel Capsules",
-    icon: Package,
-    count: 15,
-    description: "Advanced delivery systems for enhanced bioavailability",
-    products: [
-      "Ibuprofen (200mg, 400mg, 600mg)",
-      "Cetirizine Hydrochloride 10mg",
-      "Fluconazole Suppositories 150mg",
-      "Clindamycin (150mg, 300mg)",
-      "Gabapentin (100mg, 300mg)",
-      "Pregabalin (75mg, 150mg)",
-      "Vitamin D3 preparations",
-      "Omega-3 fatty acids",
-      "Coenzyme Q10",
-      "Alpha Lipoic Acid",
-      "Evening Primrose Oil",
-      "Fish Oil concentrates",
-      "Multivitamin combinations",
-      "Calcium & Vitamin D",
-      "Iron supplements"
-    ]
-  },
-  {
-    title: "Injectables & Liquids",
-    icon: Syringe,
-    count: 25,
-    description: "Sterile preparations for critical care",
-    products: [
-      "Artemether & Lumifantrine Suspension",
-      "Carbocisteine Syrup 2%",
-      "Cetrizine HCL Syrup 5mg/ml",
-      "DXM, Phenylephrine & Cetirizine Syrup",
-      "Terbinaβine Hydrochloride Cream 1%",
-      "Amoxicillin Oral Suspension",
-      "Azithromycin Oral Suspension",
-      "Cefixime Oral Suspension",
-      "Clarithromycin Granules",
-      "Metronidazole Suspension",
-      "Paracetamol Suspension",
-      "Ibuprofen Suspension",
-      "Ondansetron Injection",
-      "Diclofenac Injection",
-      "Tramadol Injection",
-      "Ketorolac Injection",
-      "Ranitidine Injection",
-      "Pantoprazole Injection",
-      "Ceftriaxone Injection",
-      "Cefotaxime Injection",
-      "Gentamicin Injection",
-      "Dexamethasone Injection",
-      "Methylprednisolone Injection",
-      "Insulin preparations",
-      "Heparin formulations"
-    ]
-  }
-];
-
-const therapeuticAreas = [
-  {
-    name: "Cardiovascular",
-    icon: Heart,
-    productCount: 25,
-    color: "text-red-500",
-    bgColor: "bg-red-50",
-    products: ["Amlodipine", "Telmisartan", "Losartan", "Atorvastatin", "Rosuvastatin", "Clopidogrel", "HCTZ combinations"]
-  },
-  {
-    name: "Central Nervous System",
-    icon: Brain,
-    productCount: 18,
-    color: "text-purple-500",
-    bgColor: "bg-purple-50",
-    products: ["Gabapentin", "Pregabalin", "Clobazam", "Tadalafil", "Clomifene", "Pain management combinations"]
-  },
-  {
-    name: "Anti-Infectives",
-    icon: Shield,
-    productCount: 22,
-    color: "text-blue-500",
-    bgColor: "bg-blue-50",
-    products: ["Azithromycin", "Ciprofloxacin", "Levofloxacin", "Clarithromycin", "Fluconazole", "Clindamycin", "Cotrimoxazole"]
-  },
-  {
-    name: "Metabolic & Endocrine",
-    icon: Activity,
-    productCount: 15,
-    color: "text-green-500",
-    bgColor: "bg-green-50",
-    products: ["Glimepiride", "Metformin", "Pioglitazone", "Insulin preparations", "Thyroid medications"]
-  },
-  {
-    name: "Gastroenterology",
-    icon: Zap,
-    productCount: 12,
-    color: "text-orange-500",
-    bgColor: "bg-orange-50",
-    products: ["Esomeprazole", "Pantoprazole", "Domperidone", "Ranitidine", "Digestive enzymes"]
-  },
-  {
-    name: "Respiratory Care",
-    icon: Globe,
-    productCount: 10,
-    color: "text-cyan-500",
-    bgColor: "bg-cyan-50",
-    products: ["Carbocisteine", "Artemether-Lumifantrine", "Bronchodilators", "Anti-histamines"]
-  }
-];
-
-const facilityApprovals = [
-  { name: "EU GMP", status: "Certified", color: "bg-green-100 text-green-800" },
-  { name: "USFDA", status: "Approved", color: "bg-blue-100 text-blue-800" },
-  { name: "WHO GMP", status: "Certified", color: "bg-purple-100 text-purple-800" },
-  { name: "Health Canada", status: "Approved", color: "bg-red-100 text-red-800" },
-  { name: "TGA Australia", status: "Listed", color: "bg-yellow-100 text-yellow-800" },
-  { name: "UAE MOH", status: "Licensed", color: "bg-indigo-100 text-indigo-800" }
-];
-
+const productCategories = [{
+  title: "Tablets",
+  icon: Pill,
+  count: 50,
+  description: "Comprehensive range of oral solid dosage forms",
+  products: ["Amlodipine & Telmisartan Combination", "Amlodipine Besylate (5mg, 10mg)", "Atorvastatin (10mg, 20mg)", "Azithromycin (250mg, 500mg)", "Ciprofloxacin 500mg", "Clarithromycin 500mg", "Clopidogrel 75mg", "Esomeprazole (20mg, 40mg)", "Fluconazole (100mg, 200mg)", "Glimepiride & Metformin Combination", "Hydrochlorothiazide 25mg", "Levofloxacin (250mg, 500mg)", "Losartan Potassium (25mg, 50mg, 100mg)", "Losartan & HCTZ Combination", "Pioglitazone (15mg, 30mg)", "Rosuvastatin (10mg, 20mg)", "Tadalafil 20mg", "Telmisartan (40mg, 80mg)", "Telmisartan & HCTZ Combination", "Celecoxib 200mg", "Cetrizine HCL", "Clobazam 10mg", "Clomifene 50mg", "Cotrimoxazole 480mg", "Domperidone 10mg", "Tacrolimus (0.5mg, 1mg)"]
+}, {
+  title: "Softgel Capsules",
+  icon: Package,
+  count: 15,
+  description: "Advanced delivery systems for enhanced bioavailability",
+  products: ["Ibuprofen (200mg, 400mg, 600mg)", "Cetirizine Hydrochloride 10mg", "Fluconazole Suppositories 150mg", "Clindamycin (150mg, 300mg)", "Gabapentin (100mg, 300mg)", "Pregabalin (75mg, 150mg)", "Vitamin D3 preparations", "Omega-3 fatty acids", "Coenzyme Q10", "Alpha Lipoic Acid", "Evening Primrose Oil", "Fish Oil concentrates", "Multivitamin combinations", "Calcium & Vitamin D", "Iron supplements"]
+}, {
+  title: "Injectables & Liquids",
+  icon: Syringe,
+  count: 25,
+  description: "Sterile preparations for critical care",
+  products: ["Artemether & Lumifantrine Suspension", "Carbocisteine Syrup 2%", "Cetrizine HCL Syrup 5mg/ml", "DXM, Phenylephrine & Cetirizine Syrup", "Terbinaβine Hydrochloride Cream 1%", "Amoxicillin Oral Suspension", "Azithromycin Oral Suspension", "Cefixime Oral Suspension", "Clarithromycin Granules", "Metronidazole Suspension", "Paracetamol Suspension", "Ibuprofen Suspension", "Ondansetron Injection", "Diclofenac Injection", "Tramadol Injection", "Ketorolac Injection", "Ranitidine Injection", "Pantoprazole Injection", "Ceftriaxone Injection", "Cefotaxime Injection", "Gentamicin Injection", "Dexamethasone Injection", "Methylprednisolone Injection", "Insulin preparations", "Heparin formulations"]
+}];
+const therapeuticAreas = [{
+  name: "Cardiovascular",
+  icon: Heart,
+  productCount: 25,
+  color: "text-red-500",
+  bgColor: "bg-red-50",
+  products: ["Amlodipine", "Telmisartan", "Losartan", "Atorvastatin", "Rosuvastatin", "Clopidogrel", "HCTZ combinations"]
+}, {
+  name: "Central Nervous System",
+  icon: Brain,
+  productCount: 18,
+  color: "text-purple-500",
+  bgColor: "bg-purple-50",
+  products: ["Gabapentin", "Pregabalin", "Clobazam", "Tadalafil", "Clomifene", "Pain management combinations"]
+}, {
+  name: "Anti-Infectives",
+  icon: Shield,
+  productCount: 22,
+  color: "text-blue-500",
+  bgColor: "bg-blue-50",
+  products: ["Azithromycin", "Ciprofloxacin", "Levofloxacin", "Clarithromycin", "Fluconazole", "Clindamycin", "Cotrimoxazole"]
+}, {
+  name: "Metabolic & Endocrine",
+  icon: Activity,
+  productCount: 15,
+  color: "text-green-500",
+  bgColor: "bg-green-50",
+  products: ["Glimepiride", "Metformin", "Pioglitazone", "Insulin preparations", "Thyroid medications"]
+}, {
+  name: "Gastroenterology",
+  icon: Zap,
+  productCount: 12,
+  color: "text-orange-500",
+  bgColor: "bg-orange-50",
+  products: ["Esomeprazole", "Pantoprazole", "Domperidone", "Ranitidine", "Digestive enzymes"]
+}, {
+  name: "Respiratory Care",
+  icon: Globe,
+  productCount: 10,
+  color: "text-cyan-500",
+  bgColor: "bg-cyan-50",
+  products: ["Carbocisteine", "Artemether-Lumifantrine", "Bronchodilators", "Anti-histamines"]
+}];
+const facilityApprovals = [{
+  name: "EU GMP",
+  status: "Certified",
+  color: "bg-green-100 text-green-800"
+}, {
+  name: "USFDA",
+  status: "Approved",
+  color: "bg-blue-100 text-blue-800"
+}, {
+  name: "WHO GMP",
+  status: "Certified",
+  color: "bg-purple-100 text-purple-800"
+}, {
+  name: "Health Canada",
+  status: "Approved",
+  color: "bg-red-100 text-red-800"
+}, {
+  name: "TGA Australia",
+  status: "Listed",
+  color: "bg-yellow-100 text-yellow-800"
+}, {
+  name: "UAE MOH",
+  status: "Licensed",
+  color: "bg-indigo-100 text-indigo-800"
+}];
 const ProductCatalogEnhanced = () => {
-  return (
-    <div className="min-h-screen bg-gradient-subtle">
+  return <div className="min-h-screen bg-gradient-subtle">
       {/* Header */}
       <div className="bg-gradient-primary text-white py-16">
         <div className="container mx-auto px-6">
-          <Button 
-            variant="outline" 
-            className="mb-8 border-white/30 text-white hover:bg-white/10"
-            onClick={() => window.location.href = '/'}
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
-          </Button>
+          
           
           <div className="max-w-4xl">
             <h1 className="text-5xl font-bold mb-6">
@@ -190,14 +116,12 @@ const ProductCatalogEnhanced = () => {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-8">Regulatory Approvals & Certifications</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {facilityApprovals.map((approval, index) => (
-              <Card key={index} className="corporate-card text-center p-4">
+            {facilityApprovals.map((approval, index) => <Card key={index} className="corporate-card text-center p-4">
                 <Badge className={`${approval.color} mb-2 text-xs font-medium`}>
                   {approval.status}
                 </Badge>
                 <p className="font-semibold text-sm">{approval.name}</p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </section>
 
@@ -206,9 +130,8 @@ const ProductCatalogEnhanced = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Product Categories</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {productCategories.map((category, index) => {
-              const IconComponent = category.icon;
-              return (
-                <Card key={index} className="corporate-card hover:shadow-large transition-all duration-300">
+            const IconComponent = category.icon;
+            return <Card key={index} className="corporate-card hover:shadow-large transition-all duration-300">
                   <CardHeader className="text-center">
                     <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4">
                       <IconComponent className="w-8 h-8 text-white" />
@@ -221,22 +144,17 @@ const ProductCatalogEnhanced = () => {
                   <CardContent>
                     <p className="text-muted-foreground mb-4">{category.description}</p>
                     <div className="space-y-2">
-                      {category.products.slice(0, 5).map((product, productIndex) => (
-                        <div key={productIndex} className="flex items-center text-sm">
+                      {category.products.slice(0, 5).map((product, productIndex) => <div key={productIndex} className="flex items-center text-sm">
                           <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                           <span>{product}</span>
-                        </div>
-                      ))}
-                      {category.products.length > 5 && (
-                        <p className="text-sm text-muted-foreground font-medium">
+                        </div>)}
+                      {category.products.length > 5 && <p className="text-sm text-muted-foreground font-medium">
                           +{category.products.length - 5} more products
-                        </p>
-                      )}
+                        </p>}
                     </div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </section>
 
@@ -245,9 +163,8 @@ const ProductCatalogEnhanced = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Therapeutic Areas</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {therapeuticAreas.map((area, index) => {
-              const IconComponent = area.icon;
-              return (
-                <Card key={index} className="corporate-card hover:shadow-medium transition-all duration-300">
+            const IconComponent = area.icon;
+            return <Card key={index} className="corporate-card hover:shadow-medium transition-all duration-300">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-3">
                       <div className={`p-3 rounded-lg ${area.bgColor}`}>
@@ -261,16 +178,13 @@ const ProductCatalogEnhanced = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-1">
-                      {area.products.slice(0, 4).map((product, productIndex) => (
-                        <span key={productIndex} className="inline-block text-xs bg-muted px-2 py-1 rounded mr-1 mb-1">
+                      {area.products.slice(0, 4).map((product, productIndex) => <span key={productIndex} className="inline-block text-xs bg-muted px-2 py-1 rounded mr-1 mb-1">
                           {product}
-                        </span>
-                      ))}
+                        </span>)}
                     </div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </section>
 
@@ -304,8 +218,6 @@ const ProductCatalogEnhanced = () => {
           </Card>
         </section>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ProductCatalogEnhanced;
