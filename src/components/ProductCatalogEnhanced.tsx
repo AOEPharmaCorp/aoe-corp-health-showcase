@@ -88,7 +88,7 @@ const facilityApprovals = [{
   color: "bg-yellow-100 text-yellow-800"
 }, {
   name: "UAE MOH",
-  status: "Licensed",
+  status: "Approved",
   color: "bg-indigo-100 text-indigo-800"
 }];
 const ProductCatalogEnhanced = () => {
