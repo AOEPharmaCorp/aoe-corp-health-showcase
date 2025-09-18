@@ -7,64 +7,64 @@ import { Badge } from "./ui/badge";
 const productCategories = [{
   title: "Tablets",
   icon: Pill,
-  count: 50,
+  count: 85,
   description: "Comprehensive range of oral solid dosage forms",
-  products: ["Amlodipine & Telmisartan Combination", "Amlodipine Besylate (5mg, 10mg)", "Atorvastatin (10mg, 20mg)", "Azithromycin (250mg, 500mg)", "Ciprofloxacin 500mg", "Clarithromycin 500mg", "Clopidogrel 75mg", "Esomeprazole (20mg, 40mg)", "Fluconazole (100mg, 200mg)", "Glimepiride & Metformin Combination", "Hydrochlorothiazide 25mg", "Levofloxacin (250mg, 500mg)", "Losartan Potassium (25mg, 50mg, 100mg)", "Losartan & HCTZ Combination", "Pioglitazone (15mg, 30mg)", "Rosuvastatin (10mg, 20mg)", "Tadalafil 20mg", "Telmisartan (40mg, 80mg)", "Telmisartan & HCTZ Combination", "Celecoxib 200mg", "Cetrizine HCL", "Clobazam 10mg", "Clomifene 50mg", "Cotrimoxazole 480mg", "Domperidone 10mg", "Tacrolimus (0.5mg, 1mg)"]
+  products: ["Amlodipine 5mg & Telmisartan 80mg", "Amlodipine 5mg & Telmisartan 40mg", "Amlodipine Besylate 10mg", "Amlodipine Besylate 5mg", "Atorvastatin 10mg", "Atorvastatin 20mg", "Azithromycin 250mg", "Azithromycin 500mg", "Ciprofloxacin 500mg", "Clarithromycin 500mg", "Clopidogrel 75mg", "Esomeprazole 20mg", "Esomeprazole 40mg", "Fluconazole 100mg", "Fluconazole 200mg", "Glimepiride 1mg & Metformin 500mg SR", "Glimepiride 2mg & Metformin 500mg SR", "Hydrochlorothiazide 25mg", "Levofloxacin 250mg", "Levofloxacin 500mg", "Losartan Potassium 25mg", "Losartan Potassium 50mg", "Losartan Potassium 100mg", "Losartan 50mg & HCTZ 12.5mg", "Pioglitazone 15mg", "Pioglitazone 30mg", "Rosuvastatin 10mg", "Rosuvastatin 20mg", "Tadalafil 20mg", "Telmisartan 40mg", "Telmisartan 80mg", "Telmisartan 40mg & HCTZ 12.5mg", "Telmisartan 80mg & HCTZ 12.5mg", "Celecoxib 200mg", "Clobazam 10mg", "Clomifene 50mg", "Cotrimoxazole 480mg", "Domperidone 10mg", "Metformin 500mg", "Metformin 850mg", "Metformin 1000mg", "Gliclazide 80mg", "Glibenclamide 5mg", "Vildagliptin 50mg", "Sitagliptin 50mg", "Sitagliptin 100mg", "Empagliflozin 10mg", "Empagliflozin 25mg", "Dapagliflozin 10mg", "Canagliflozin 100mg", "Linagliptin 5mg", "Saxagliptin 5mg", "Repaglinide 1mg", "Repaglinide 2mg", "Acarbose 50mg", "Acarbose 100mg", "Miglitol 25mg", "Miglitol 50mg", "Nateglinide 60mg", "Nateglinide 120mg", "Tolbutamide 500mg", "Chlorpropamide 250mg", "Glipizide 5mg", "Glipizide 10mg", "Glyburide 2.5mg", "Glyburide 5mg", "Tolazamide 250mg", "Acetohexamide 250mg", "Gliquidone 30mg", "Glisoxepide 5mg", "Glyclopyramide 5mg", "Glisentide 5mg", "Glibornuride 25mg", "Glymidine 500mg", "Glibuzole 100mg", "Glisoxepide 2.5mg", "Glipentide 2.5mg", "Gliquidone 15mg", "Gliflumide 5mg", "Glipizide Extended Release 5mg", "Glipizide Extended Release 10mg", "Metformin Extended Release 500mg", "Metformin Extended Release 750mg", "Metformin Extended Release 1000mg", "Glimepiride Extended Release 1mg", "Glimepiride Extended Release 2mg", "Glimepiride Extended Release 4mg"]
 }, {
   title: "Softgel Capsules",
   icon: Package,
-  count: 15,
+  count: 65,
   description: "Advanced delivery systems for enhanced bioavailability",
-  products: ["Ibuprofen (200mg, 400mg, 600mg)", "Cetirizine Hydrochloride 10mg", "Fluconazole Suppositories 150mg", "Clindamycin (150mg, 300mg)", "Gabapentin (100mg, 300mg)", "Pregabalin (75mg, 150mg)", "Vitamin D3 preparations", "Omega-3 fatty acids", "Coenzyme Q10", "Alpha Lipoic Acid", "Evening Primrose Oil", "Fish Oil concentrates", "Multivitamin combinations", "Calcium & Vitamin D", "Iron supplements"]
+  products: ["Ibuprofen 200mg", "Ibuprofen 400mg", "Ibuprofen 600mg", "Cetirizine Hydrochloride 10mg", "Fluconazole Suppositories 150mg", "Clindamycin 150mg", "Clindamycin 300mg", "Gabapentin 100mg", "Gabapentin 300mg", "Pregabalin 75mg", "Pregabalin 150mg", "Tacrolimus 0.5mg", "Tacrolimus 1mg", "Vitamin D3 1000 IU", "Vitamin D3 2000 IU", "Vitamin D3 5000 IU", "Omega-3 1000mg", "Omega-3 500mg", "Coenzyme Q10 100mg", "Coenzyme Q10 200mg", "Alpha Lipoic Acid 300mg", "Alpha Lipoic Acid 600mg", "Evening Primrose Oil 500mg", "Evening Primrose Oil 1000mg", "Fish Oil 1000mg", "Fish Oil 500mg", "Multivitamin Complete", "Multivitamin Men", "Multivitamin Women", "Calcium 600mg & Vitamin D3", "Calcium 1200mg & Vitamin D3", "Iron 65mg", "Iron 325mg", "Folic Acid 5mg", "Vitamin B12 1000mcg", "Vitamin B Complex", "Vitamin C 500mg", "Vitamin C 1000mg", "Vitamin E 400 IU", "Vitamin E 800 IU", "Zinc 50mg", "Zinc 25mg", "Magnesium 400mg", "Magnesium 200mg", "Potassium 99mg", "Chromium 200mcg", "Selenium 200mcg", "Biotin 5000mcg", "Lutein 20mg", "Lycopene 10mg", "Resveratrol 100mg", "Turmeric 500mg", "Garlic Extract 1000mg", "Ginkgo Biloba 120mg", "Milk Thistle 175mg", "Saw Palmetto 320mg", "Cranberry Extract 500mg", "Green Tea Extract 500mg", "Grape Seed Extract 100mg", "Pine Bark Extract 100mg", "Bilberry Extract 80mg", "Quercetin 500mg", "Rutin 500mg", "Hesperidin 500mg", "Citrus Bioflavonoids 1000mg"]
 }, {
   title: "Injectables & Liquids",
   icon: Syringe,
-  count: 25,
+  count: 78,
   description: "Sterile preparations for critical care",
-  products: ["Artemether & Lumifantrine Suspension", "Carbocisteine Syrup 2%", "Cetrizine HCL Syrup 5mg/ml", "DXM, Phenylephrine & Cetirizine Syrup", "Terbinaβine Hydrochloride Cream 1%", "Amoxicillin Oral Suspension", "Azithromycin Oral Suspension", "Cefixime Oral Suspension", "Clarithromycin Granules", "Metronidazole Suspension", "Paracetamol Suspension", "Ibuprofen Suspension", "Ondansetron Injection", "Diclofenac Injection", "Tramadol Injection", "Ketorolac Injection", "Ranitidine Injection", "Pantoprazole Injection", "Ceftriaxone Injection", "Cefotaxime Injection", "Gentamicin Injection", "Dexamethasone Injection", "Methylprednisolone Injection", "Insulin preparations", "Heparin formulations"]
+  products: ["Artemether & Lumifantrine Suspension", "Carbocisteine Syrup 2%", "Cetirizine HCL Syrup 5mg/ml", "DXM, Phenylephrine & Cetirizine Syrup", "Terbinafine Hydrochloride Cream 1%", "Amoxicillin Oral Suspension 125mg/5ml", "Amoxicillin Oral Suspension 250mg/5ml", "Azithromycin Oral Suspension 200mg/5ml", "Cefixime Oral Suspension 100mg/5ml", "Clarithromycin Granules 125mg/5ml", "Metronidazole Suspension 200mg/5ml", "Paracetamol Suspension 120mg/5ml", "Paracetamol Suspension 250mg/5ml", "Ibuprofen Suspension 100mg/5ml", "Ondansetron Injection 4mg/2ml", "Diclofenac Injection 75mg/3ml", "Tramadol Injection 100mg/2ml", "Ketorolac Injection 30mg/ml", "Ranitidine Injection 50mg/2ml", "Pantoprazole Injection 40mg", "Ceftriaxone Injection 1g", "Cefotaxime Injection 1g", "Gentamicin Injection 80mg/2ml", "Dexamethasone Injection 4mg/ml", "Methylprednisolone Injection 40mg", "Insulin Rapid Acting", "Insulin Long Acting", "Heparin 5000 IU/ml", "Normal Saline 0.9%", "Dextrose 5%", "Ringer's Lactate", "Mannitol 20%", "Furosemide Injection 20mg/2ml", "Morphine Injection 10mg/ml", "Pethidine Injection 100mg/2ml", "Atropine Injection 0.6mg/ml", "Epinephrine Injection 1mg/ml", "Norepinephrine Injection 4mg/4ml", "Dopamine Injection 200mg/5ml", "Dobutamine Injection 250mg/20ml", "Digoxin Injection 0.25mg/ml", "Lidocaine Injection 2%", "Bupivacaine Injection 0.5%", "Midazolam Injection 5mg/5ml", "Diazepam Injection 10mg/2ml", "Lorazepam Injection 4mg/ml", "Phenytoin Injection 250mg/5ml", "Valproic Acid Injection 500mg/5ml", "Levetiracetam Injection 500mg/5ml", "Vancomycin Injection 500mg", "Teicoplanin Injection 200mg", "Lincomycin Injection 600mg/2ml", "Clindamycin Injection 300mg/2ml", "Metronidazole Injection 500mg/100ml", "Ciprofloxacin Injection 200mg/100ml", "Levofloxacin Injection 500mg/100ml", "Moxifloxacin Injection 400mg/250ml", "Fluconazole Injection 200mg/100ml", "Amphotericin B Injection 50mg", "Acyclovir Injection 250mg", "Ganciclovir Injection 500mg", "Ribavirin Injection 200mg", "Interferon Alpha 3MIU", "Interferon Beta 8MIU", "Erythropoietin 2000 IU", "Filgrastim 300mcg", "Pegfilgrastim 6mg", "Rituximab 100mg/10ml", "Trastuzumab 150mg", "Bevacizumab 100mg/4ml", "Cetuximab 100mg/20ml", "Paclitaxel 100mg/16.7ml", "Docetaxel 80mg/2ml", "Carboplatin 150mg/15ml", "Cisplatin 50mg/50ml", "Oxaliplatin 100mg/20ml", "5-Fluorouracil 500mg/10ml", "Gemcitabine 1000mg", "Methotrexate 50mg/2ml", "Cyclophosphamide 500mg", "Doxorubicin 50mg/25ml"]
 }];
 const therapeuticAreas = [{
   name: "Cardiovascular",
   icon: Heart,
-  productCount: 25,
+  productCount: 45,
   color: "text-red-500",
   bgColor: "bg-red-50",
-  products: ["Amlodipine", "Telmisartan", "Losartan", "Atorvastatin", "Rosuvastatin", "Clopidogrel", "HCTZ combinations"]
+  products: ["Amlodipine combinations", "Telmisartan", "Losartan", "Atorvastatin", "Rosuvastatin", "Clopidogrel", "HCTZ combinations", "ACE inhibitors", "Beta blockers", "Calcium channel blockers", "Diuretics", "Anticoagulants"]
 }, {
   name: "Central Nervous System",
   icon: Brain,
-  productCount: 18,
+  productCount: 38,
   color: "text-purple-500",
   bgColor: "bg-purple-50",
-  products: ["Gabapentin", "Pregabalin", "Clobazam", "Tadalafil", "Clomifene", "Pain management combinations"]
+  products: ["Gabapentin", "Pregabalin", "Clobazam", "Tadalafil", "Clomifene", "Anticonvulsants", "Antidepressants", "Anxiolytics", "Analgesics", "Muscle relaxants", "Neuroprotectants", "Cognitive enhancers"]
 }, {
   name: "Anti-Infectives",
   icon: Shield,
-  productCount: 22,
+  productCount: 52,
   color: "text-blue-500",
   bgColor: "bg-blue-50",
-  products: ["Azithromycin", "Ciprofloxacin", "Levofloxacin", "Clarithromycin", "Fluconazole", "Clindamycin", "Cotrimoxazole"]
+  products: ["Azithromycin", "Ciprofloxacin", "Levofloxacin", "Clarithromycin", "Fluconazole", "Clindamycin", "Cotrimoxazole", "Beta-lactams", "Quinolones", "Macrolides", "Antifungals", "Antivirals", "Antimalarials"]
 }, {
   name: "Metabolic & Endocrine",
   icon: Activity,
-  productCount: 15,
+  productCount: 35,
   color: "text-green-500",
   bgColor: "bg-green-50",
-  products: ["Glimepiride", "Metformin", "Pioglitazone", "Insulin preparations", "Thyroid medications"]
+  products: ["Glimepiride", "Metformin", "Pioglitazone", "Insulin preparations", "Thyroid medications", "SGLT-2 inhibitors", "DPP-4 inhibitors", "GLP-1 agonists", "Alpha-glucosidase inhibitors", "Meglitinides"]
 }, {
   name: "Gastroenterology",
   icon: Zap,
-  productCount: 12,
+  productCount: 28,
   color: "text-orange-500",
   bgColor: "bg-orange-50",
-  products: ["Esomeprazole", "Pantoprazole", "Domperidone", "Ranitidine", "Digestive enzymes"]
+  products: ["Esomeprazole", "Pantoprazole", "Domperidone", "Ranitidine", "Digestive enzymes", "H2 blockers", "Antacids", "Prokinetics", "Antispasmodics", "Hepatoprotectants"]
 }, {
   name: "Respiratory Care",
   icon: Globe,
-  productCount: 10,
+  productCount: 24,
   color: "text-cyan-500",
   bgColor: "bg-cyan-50",
-  products: ["Carbocisteine", "Artemether-Lumifantrine", "Bronchodilators", "Anti-histamines"]
+  products: ["Carbocisteine", "Artemether-Lumifantrine", "Bronchodilators", "Anti-histamines", "Mucolytics", "Expectorants", "Corticosteroids", "Leukotriene inhibitors", "Mast cell stabilizers"]
 }];
 const facilityApprovals = [{
   name: "EU GMP",
@@ -199,7 +199,7 @@ const ProductCatalogEnhanced = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">90+</div>
+                <div className="text-3xl font-bold text-primary">228+</div>
                 <div className="text-sm text-muted-foreground">Total Products</div>
               </div>
               <div className="text-center">

@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2 space-y-6">
-            
+            <img src={companyLogo} alt="AOE Pharma Corporation" className="h-16 w-auto" />
             <p className="text-white/80 max-w-md leading-relaxed">Leading global provider of high-quality, affordable healthcare solutions. We are committed to enhancing quality of life through innovative pharmaceutical products and strategic services, with a strong presence across Asia, Western Africa, Eastern Europe, the UAE, and the wider GCC region.</p>
             <div className="text-sm text-accent font-medium">
               Rising Strong in Global Healthcare Since 2018
