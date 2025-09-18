@@ -1,61 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
-Modern corporate design with sharp typography and high contrast.
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 15% 8%;
+    --foreground: 212 21% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 8%;
+    --card-foreground: 212 21% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 8%;
+    --popover-foreground: 212 21% 14%;
 
-    --primary: 213 94% 28%;
+    --primary: 208 100% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 32% 95%;
-    --secondary-foreground: 220 15% 8%;
+    --secondary: 210 29% 97%;
+    --secondary-foreground: 212 21% 14%;
 
-    --muted: 210 32% 95%;
-    --muted-foreground: 220 9% 45%;
+    --muted: 210 29% 97%;
+    --muted-foreground: 212 13% 46%;
 
-    --accent: 213 94% 38%;
+    --accent: 195 91% 56%;
     --accent-foreground: 0 0% 100%;
     
-    /* Enhanced Corporate theme colors */
-    --corporate-blue: 213 94% 28%;
-    --corporate-blue-light: 213 94% 38%;
-    --corporate-blue-dark: 213 94% 18%;
-    --corporate-accent: 195 100% 45%;
-    --corporate-gray: 210 20% 96%;
-    --corporate-gray-dark: 220 13% 92%;
-    --text-primary: 220 15% 8%;
-    --text-secondary: 220 9% 45%;
-    --text-muted: 220 9% 65%;
+    /* Medical/Corporate theme colors */
+    --medical-blue: 208 100% 35%;
+    --medical-cyan: 195 91% 56%;
+    --medical-navy: 212 84% 20%;
+    --corporate-gray: 214 13% 93%;
+    --text-muted: 212 13% 46%;
     
-    /* Enhanced Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(213 94% 28%), hsl(213 94% 38%));
-    --gradient-hero: linear-gradient(135deg, hsl(213 94% 28% / 0.95), hsl(213 94% 38% / 0.9));
-    --gradient-accent: linear-gradient(135deg, hsl(195 100% 45%), hsl(213 94% 38%));
-    --gradient-subtle: linear-gradient(180deg, hsl(210 32% 95%), hsl(0 0% 100%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 32% 98%));
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(208 100% 35%), hsl(195 91% 56%));
+    --gradient-hero: linear-gradient(135deg, hsl(208 100% 35% / 0.95), hsl(195 91% 56% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 29% 97%), hsl(0 0% 100%));
     
-    /* Enhanced Shadows */
-    --shadow-soft: 0 1px 3px hsl(220 15% 8% / 0.08);
-    --shadow-medium: 0 4px 12px hsl(220 15% 8% / 0.12);
-    --shadow-large: 0 8px 32px hsl(220 15% 8% / 0.16);
-    --shadow-glow: 0 0 40px hsl(213 94% 38% / 0.25);
-    --shadow-corporate: 0 2px 8px hsl(213 94% 28% / 0.1);
+    /* Shadows */
+    --shadow-soft: 0 2px 10px hsl(208 100% 35% / 0.1);
+    --shadow-medium: 0 8px 25px hsl(208 100% 35% / 0.15);
+    --shadow-glow: 0 0 30px hsl(195 91% 56% / 0.3);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -128,40 +117,6 @@ Modern corporate design with sharp typography and high contrast.
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
-    font-feature-settings: "cv11", "ss01";
-    font-variation-settings: "opsz" 32;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-semibold tracking-tight;
-  }
-
-  h1 {
-    @apply text-4xl lg:text-5xl xl:text-6xl font-bold;
-  }
-
-  h2 {
-    @apply text-3xl lg:text-4xl font-bold;
-  }
-
-  h3 {
-    @apply text-2xl lg:text-3xl font-semibold;
-  }
-
-  p {
-    @apply leading-relaxed;
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
-  }
-
-  .corporate-card {
-    @apply bg-gradient-card backdrop-blur-sm border border-corporate-gray-dark/20 shadow-corporate;
-  }
-
-  .nav-link {
-    @apply font-medium tracking-wide transition-all duration-200 hover:text-primary;
+    @apply bg-background text-foreground;
   }
 }

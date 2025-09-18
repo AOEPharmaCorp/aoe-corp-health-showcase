@@ -1,38 +1,38 @@
 import { Building2, Mail, MapPin, Phone, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import companyLogo from "@/assets/apc-logo-new.png";
+import companyLogo from "@/assets/company-logo.png";
 const Header = () => {
-  return <header className="bg-white shadow-corporate sticky top-0 z-50 border-b border-corporate-gray">
-      <div className="container mx-auto px-6 py-4">
+  return <header className="bg-white shadow-soft sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <img src={companyLogo} alt="APC AOE Pharma Corporation" className="h-16 w-auto object-contain" />
+          <div className="flex items-center gap-4">
+            <img src={companyLogo} alt="APC AOE Pharma Corporation" className="h-20 w-auto object-contain" />
           </div>
           
           <div className="flex items-center gap-6">
-            <nav className="hidden lg:flex items-center gap-10">
-              <a href="/" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="/" className="text-foreground hover:text-primary transition-colors font-medium">
                 Home
               </a>
-              <a href="/products" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+              <a href="/products" className="text-foreground hover:text-primary transition-colors font-medium">
                 Products
               </a>
-              <a href="/contact" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+              <a href="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
                 Contact
               </a>
             </nav>
             
             
             
-            <Button asChild className="hidden lg:inline-flex bg-primary hover:bg-primary/90 text-white font-medium tracking-wide shadow-corporate">
+            <Button asChild className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-white">
               <a href="/contact">Get Quote</a>
             </Button>
             
             {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="lg:hidden">
+                <Button variant="outline" size="icon" className="md:hidden">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
