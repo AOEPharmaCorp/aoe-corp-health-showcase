@@ -1,4 +1,4 @@
-import ProductCatalog from "@/components/ProductCatalog";
+import ProductCatalogEnhanced from "@/components/ProductCatalogEnhanced";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -6,7 +6,7 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <ProductCatalog />
+      <ProductCatalogEnhanced />
       <Footer />
     </div>
   );

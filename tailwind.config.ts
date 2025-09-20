@@ -15,6 +15,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -37,6 +39,11 @@ export default {
         },
         corporate: {
           gray: "hsl(var(--corporate-gray))",
+          "gray-dark": "hsl(var(--corporate-gray-dark))",
+          blue: "hsl(var(--corporate-blue))",
+          "blue-light": "hsl(var(--corporate-blue-light))",
+          "blue-dark": "hsl(var(--corporate-blue-dark))",
+          accent: "hsl(var(--corporate-accent))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -72,12 +79,16 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-hero': 'var(--gradient-hero)', 
+        'gradient-accent': 'var(--gradient-accent)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-card': 'var(--gradient-card)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'medium': 'var(--shadow-medium)',
+        'large': 'var(--shadow-large)',
         'glow': 'var(--shadow-glow)',
+        'corporate': 'var(--shadow-corporate)',
       },
       borderRadius: {
         lg: "var(--radius)",
