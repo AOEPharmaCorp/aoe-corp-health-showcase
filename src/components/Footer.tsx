@@ -12,7 +12,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="space-y-6 bg-blue-50">
+          <div className="space-y-6 bg-white">
             <h4 className="text-lg font-semibold text-gray-400">Contact Information</h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
