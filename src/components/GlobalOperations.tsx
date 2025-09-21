@@ -14,7 +14,7 @@ const GlobalOperations = () => {
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-glow">
             <CardContent className="p-8 text-center">
               <Building className="w-8 h-8 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Regional Offices</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-50">Regional Offices</h3>
               <p className="text-2xl font-bold text-accent mb-1">2+</p>
               <p className="text-sm text-white/70">India & UAE</p>
             </CardContent>
@@ -23,7 +23,7 @@ const GlobalOperations = () => {
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-glow">
             <CardContent className="p-8 text-center">
               <MapPin className="w-8 h-8 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Market Presence</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-50">Market Presence</h3>
               <p className="text-2xl font-bold text-accent mb-1">3</p>
               <p className="text-sm text-white/70">Major Regions</p>
             </CardContent>
@@ -32,7 +32,7 @@ const GlobalOperations = () => {
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-glow">
             <CardContent className="p-8 text-center">
               <Users className="w-8 h-8 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Healthcare Impact</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-50">Healthcare Impact</h3>
               <p className="text-2xl font-bold text-accent mb-1">1M+</p>
               <p className="text-sm text-white/70">Patients Served</p>
             </CardContent>
@@ -41,7 +41,7 @@ const GlobalOperations = () => {
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-glow">
             <CardContent className="p-8 text-center">
               <TrendingUp className="w-8 h-8 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Growth</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-50">Growth</h3>
               <p className="text-2xl font-bold text-accent mb-1">2018</p>
               <p className="text-sm text-white/70">Since Establishment</p>
             </CardContent>
