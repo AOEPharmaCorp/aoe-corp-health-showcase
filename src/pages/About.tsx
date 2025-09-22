@@ -3,14 +3,12 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Globe, Target, Award, Building, Heart } from "lucide-react";
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
-        <div className="bg-gradient-primary text-white py-20">
+        <div className="bg-gradient-primary text-white py-20 bg-blue-800">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl">
               <h1 className="text-5xl font-bold mb-6">
@@ -191,8 +189,6 @@ const About = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
