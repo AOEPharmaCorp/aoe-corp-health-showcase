@@ -3,82 +3,66 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, CheckCircle, Award, FileCheck, Globe, Building, Users, Zap } from "lucide-react";
-
 const Quality = () => {
-  const certifications = [
-    {
-      name: "EU GMP",
-      description: "European Good Manufacturing Practices",
-      status: "Certified",
-      color: "bg-green-100 text-green-800",
-      year: "2020"
-    },
-    {
-      name: "USFDA",
-      description: "US Food and Drug Administration",
-      status: "Approved",
-      color: "bg-blue-100 text-blue-800",
-      year: "2021"
-    },
-    {
-      name: "WHO GMP",
-      description: "World Health Organization Good Manufacturing Practices",
-      status: "Certified",
-      color: "bg-purple-100 text-purple-800",
-      year: "2020"
-    },
-    {
-      name: "Health Canada",
-      description: "Health Canada Approval",
-      status: "Approved",
-      color: "bg-red-100 text-red-800",
-      year: "2022"
-    },
-    {
-      name: "TGA Australia",
-      description: "Therapeutic Goods Administration",
-      status: "Listed",
-      color: "bg-yellow-100 text-yellow-800",
-      year: "2022"
-    },
-    {
-      name: "UAE MOH",
-      description: "UAE Ministry of Health",
-      status: "Approved",
-      color: "bg-indigo-100 text-indigo-800",
-      year: "2019"
-    }
-  ];
-
-  const qualityStandards = [
-    {
-      icon: Shield,
-      title: "Quality Management System",
-      description: "ISO 9001:2015 certified quality management system ensuring consistent product quality and continuous improvement."
-    },
-    {
-      icon: FileCheck,
-      title: "Documentation Control",
-      description: "Comprehensive documentation and traceability systems from raw materials to finished products."
-    },
-    {
-      icon: Users,
-      title: "Personnel Training",
-      description: "Regular training and qualification programs for all staff involved in pharmaceutical manufacturing."
-    },
-    {
-      icon: Building,
-      title: "Facility Standards",
-      description: "State-of-the-art manufacturing facilities designed to meet international GMP requirements."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const certifications = [{
+    name: "EU GMP",
+    description: "European Good Manufacturing Practices",
+    status: "Certified",
+    color: "bg-green-100 text-green-800",
+    year: "2020"
+  }, {
+    name: "USFDA",
+    description: "US Food and Drug Administration",
+    status: "Approved",
+    color: "bg-blue-100 text-blue-800",
+    year: "2021"
+  }, {
+    name: "WHO GMP",
+    description: "World Health Organization Good Manufacturing Practices",
+    status: "Certified",
+    color: "bg-purple-100 text-purple-800",
+    year: "2020"
+  }, {
+    name: "Health Canada",
+    description: "Health Canada Approval",
+    status: "Approved",
+    color: "bg-red-100 text-red-800",
+    year: "2022"
+  }, {
+    name: "TGA Australia",
+    description: "Therapeutic Goods Administration",
+    status: "Listed",
+    color: "bg-yellow-100 text-yellow-800",
+    year: "2022"
+  }, {
+    name: "UAE MOH",
+    description: "UAE Ministry of Health",
+    status: "Approved",
+    color: "bg-indigo-100 text-indigo-800",
+    year: "2019"
+  }];
+  const qualityStandards = [{
+    icon: Shield,
+    title: "Quality Management System",
+    description: "ISO 9001:2015 certified quality management system ensuring consistent product quality and continuous improvement."
+  }, {
+    icon: FileCheck,
+    title: "Documentation Control",
+    description: "Comprehensive documentation and traceability systems from raw materials to finished products."
+  }, {
+    icon: Users,
+    title: "Personnel Training",
+    description: "Regular training and qualification programs for all staff involved in pharmaceutical manufacturing."
+  }, {
+    icon: Building,
+    title: "Facility Standards",
+    description: "State-of-the-art manufacturing facilities designed to meet international GMP requirements."
+  }];
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
-        <div className="bg-gradient-primary text-white py-20">
+        <div className="bg-gradient-primary text-white py-20 bg-blue-800">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl">
               <h1 className="text-5xl font-bold mb-6">
@@ -98,8 +82,7 @@ const Quality = () => {
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">Regulatory Certifications</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <Card key={index} className="corporate-card">
+              {certifications.map((cert, index) => <Card key={index} className="corporate-card">
                   <CardHeader className="text-center">
                     <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4">
                       <Award className="w-8 h-8 text-white" />
@@ -113,8 +96,7 @@ const Quality = () => {
                     </Badge>
                     <p className="text-sm text-muted-foreground">Certified since {cert.year}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -125,9 +107,8 @@ const Quality = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Quality Management Standards</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {qualityStandards.map((standard, index) => {
-                const IconComponent = standard.icon;
-                return (
-                  <Card key={index} className="corporate-card">
+              const IconComponent = standard.icon;
+              return <Card key={index} className="corporate-card">
                     <CardHeader>
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
@@ -139,9 +120,8 @@ const Quality = () => {
                     <CardContent>
                       <p className="text-muted-foreground">{standard.description}</p>
                     </CardContent>
-                  </Card>
-                );
-              })}
+                  </Card>;
+            })}
             </div>
           </div>
         </section>
@@ -292,8 +272,6 @@ const Quality = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Quality;
