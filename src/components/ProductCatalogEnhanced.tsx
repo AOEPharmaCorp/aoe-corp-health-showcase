@@ -94,7 +94,7 @@ const facilityApprovals = [{
 const ProductCatalogEnhanced = () => {
   return <div className="min-h-screen bg-gradient-subtle">
       {/* Header */}
-      <div className="bg-gradient-primary text-white py-16">
+      <div className="bg-gradient-primary text-white py-16 bg-blue-800">
         <div className="container mx-auto px-6">
           
           
