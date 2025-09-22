@@ -4,95 +4,75 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Heart, Globe, Award, Building, BookOpen, TrendingUp, Shield } from "lucide-react";
-
 const Careers = () => {
-  const benefits = [
-    {
-      icon: Heart,
-      title: "Health & Wellness",
-      description: "Comprehensive health insurance, wellness programs, and mental health support for all employees."
-    },
-    {
-      icon: TrendingUp,
-      title: "Career Development",
-      description: "Professional development opportunities, training programs, and clear career advancement paths."
-    },
-    {
-      icon: Globe,
-      title: "Global Opportunities",
-      description: "Work with international teams across Asia, Western Africa, Eastern Europe, UAE, and GCC regions."
-    },
-    {
-      icon: BookOpen,
-      title: "Learning & Education",
-      description: "Continuous learning opportunities, conference attendance, and educational assistance programs."
-    }
-  ];
-
-  const openPositions = [
-    {
-      title: "Senior Quality Assurance Manager",
-      department: "Quality & Compliance",
-      location: "Dubai, UAE",
-      type: "Full-time",
-      experience: "5+ years",
-      description: "Lead quality assurance initiatives across multiple product lines and ensure GMP compliance."
-    },
-    {
-      title: "Regulatory Affairs Specialist",
-      department: "Regulatory",
-      location: "Remote/Dubai",
-      type: "Full-time",
-      experience: "3+ years",
-      description: "Manage regulatory submissions and maintain compliance across international markets."
-    },
-    {
-      title: "Business Development Manager",
-      department: "Sales & Marketing",
-      location: "Multiple Locations",
-      type: "Full-time",
-      experience: "4+ years",
-      description: "Drive business growth and establish partnerships in emerging pharmaceutical markets."
-    },
-    {
-      title: "Manufacturing Supervisor",
-      department: "Production",
-      location: "Manufacturing Facility",
-      type: "Full-time",
-      experience: "3+ years",
-      description: "Oversee production operations and ensure adherence to manufacturing standards."
-    }
-  ];
-
-  const values = [
-    {
-      icon: Shield,
-      title: "Quality Excellence",
-      description: "Commitment to the highest pharmaceutical standards"
-    },
-    {
-      icon: Users,
-      title: "Team Collaboration",
-      description: "Working together toward common healthcare goals"
-    },
-    {
-      icon: Award,
-      title: "Innovation",
-      description: "Driving pharmaceutical innovation and advancement"
-    },
-    {
-      icon: Building,
-      title: "Global Impact",
-      description: "Making healthcare accessible worldwide"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const benefits = [{
+    icon: Heart,
+    title: "Health & Wellness",
+    description: "Comprehensive health insurance, wellness programs, and mental health support for all employees."
+  }, {
+    icon: TrendingUp,
+    title: "Career Development",
+    description: "Professional development opportunities, training programs, and clear career advancement paths."
+  }, {
+    icon: Globe,
+    title: "Global Opportunities",
+    description: "Work with international teams across Asia, Western Africa, Eastern Europe, UAE, and GCC regions."
+  }, {
+    icon: BookOpen,
+    title: "Learning & Education",
+    description: "Continuous learning opportunities, conference attendance, and educational assistance programs."
+  }];
+  const openPositions = [{
+    title: "Senior Quality Assurance Manager",
+    department: "Quality & Compliance",
+    location: "Dubai, UAE",
+    type: "Full-time",
+    experience: "5+ years",
+    description: "Lead quality assurance initiatives across multiple product lines and ensure GMP compliance."
+  }, {
+    title: "Regulatory Affairs Specialist",
+    department: "Regulatory",
+    location: "Remote/Dubai",
+    type: "Full-time",
+    experience: "3+ years",
+    description: "Manage regulatory submissions and maintain compliance across international markets."
+  }, {
+    title: "Business Development Manager",
+    department: "Sales & Marketing",
+    location: "Multiple Locations",
+    type: "Full-time",
+    experience: "4+ years",
+    description: "Drive business growth and establish partnerships in emerging pharmaceutical markets."
+  }, {
+    title: "Manufacturing Supervisor",
+    department: "Production",
+    location: "Manufacturing Facility",
+    type: "Full-time",
+    experience: "3+ years",
+    description: "Oversee production operations and ensure adherence to manufacturing standards."
+  }];
+  const values = [{
+    icon: Shield,
+    title: "Quality Excellence",
+    description: "Commitment to the highest pharmaceutical standards"
+  }, {
+    icon: Users,
+    title: "Team Collaboration",
+    description: "Working together toward common healthcare goals"
+  }, {
+    icon: Award,
+    title: "Innovation",
+    description: "Driving pharmaceutical innovation and advancement"
+  }, {
+    icon: Building,
+    title: "Global Impact",
+    description: "Making healthcare accessible worldwide"
+  }];
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
-        <div className="bg-gradient-primary text-white py-20">
+        <div className="bg-gradient-primary text-white py-20 bg-blue-800">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl">
               <h1 className="text-5xl font-bold mb-6">
@@ -103,11 +83,7 @@ const Careers = () => {
                 global healthcare. Discover opportunities to make a meaningful impact while 
                 growing professionally in a dynamic, international environment.
               </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="bg-white text-primary hover:bg-white/90"
-              >
+              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
                 View Open Positions
               </Button>
             </div>
@@ -120,9 +96,8 @@ const Careers = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Why Choose AOE Pharma?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => {
-                const IconComponent = value.icon;
-                return (
-                  <Card key={index} className="corporate-card text-center">
+              const IconComponent = value.icon;
+              return <Card key={index} className="corporate-card text-center">
                     <CardHeader>
                       <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4">
                         <IconComponent className="w-8 h-8 text-white" />
@@ -132,9 +107,8 @@ const Careers = () => {
                     <CardContent>
                       <p className="text-muted-foreground text-sm">{value.description}</p>
                     </CardContent>
-                  </Card>
-                );
-              })}
+                  </Card>;
+            })}
             </div>
           </div>
         </section>
@@ -145,9 +119,8 @@ const Careers = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Employee Benefits</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {benefits.map((benefit, index) => {
-                const IconComponent = benefit.icon;
-                return (
-                  <Card key={index} className="corporate-card">
+              const IconComponent = benefit.icon;
+              return <Card key={index} className="corporate-card">
                     <CardHeader>
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
@@ -159,9 +132,8 @@ const Careers = () => {
                     <CardContent>
                       <p className="text-muted-foreground">{benefit.description}</p>
                     </CardContent>
-                  </Card>
-                );
-              })}
+                  </Card>;
+            })}
             </div>
           </div>
         </section>
@@ -171,8 +143,7 @@ const Careers = () => {
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">Current Opportunities</h2>
             <div className="max-w-4xl mx-auto space-y-6">
-              {openPositions.map((position, index) => (
-                <Card key={index} className="corporate-card hover:shadow-medium transition-all duration-300">
+              {openPositions.map((position, index) => <Card key={index} className="corporate-card hover:shadow-medium transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div className="flex-1">
@@ -193,8 +164,7 @@ const Careers = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -261,8 +231,6 @@ const Careers = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Careers;
