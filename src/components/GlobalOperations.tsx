@@ -1,7 +1,7 @@
 import { MapPin, Building, Users, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 const GlobalOperations = () => {
-  return <section className="py-20 text-white bg-blue-950">
+  return <section className="py-20 text-white bg-blue-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
