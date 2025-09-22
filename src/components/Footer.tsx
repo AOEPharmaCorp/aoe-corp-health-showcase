@@ -1,4 +1,5 @@
 import { Building2, Mail, MapPin, Phone, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 import companyLogo from "@/assets/apc-logo-new.png";
 const Footer = () => {
   return <footer className="bg-foreground text-white">
@@ -40,16 +41,13 @@ const Footer = () => {
           </div>
           
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-zinc-400">Key Areas</h4>
-            <div className="space-y-2 text-white/80">
-              <p className="text-gray-400">• Pharmaceutical Products</p>
-              <p className="text-gray-400">• Specialty Medicines</p>
-              <p className="text-gray-400">• Generic Medications</p>
-              <p className="text-gray-400">• Active Pharmaceutical Ingredients</p>
-              <p className="text-gray-400">• Cosmeceuticals</p>
-              <p className="text-gray-400">• Research & Development</p>
-              <p className="text-gray-400">• Quality Control</p>
-              <p className="text-gray-400">• Regulatory Compliance</p>
+            <h4 className="text-lg font-semibold text-zinc-400">Quick Links</h4>
+            <div className="space-y-2">
+              <Link to="/about" className="block text-gray-400 hover:text-primary transition-colors">About Us</Link>
+              <Link to="/products" className="block text-gray-400 hover:text-primary transition-colors">Products</Link>
+              <Link to="/quality" className="block text-gray-400 hover:text-primary transition-colors">Quality & Compliance</Link>
+              <Link to="/careers" className="block text-gray-400 hover:text-primary transition-colors">Careers</Link>
+              <Link to="/contact" className="block text-gray-400 hover:text-primary transition-colors">Contact</Link>
             </div>
           </div>
         </div>

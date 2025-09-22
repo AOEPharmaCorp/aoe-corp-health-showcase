@@ -1,6 +1,7 @@
 import { Building2, Mail, MapPin, Phone, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Link } from "react-router-dom";
 import companyLogo from "@/assets/apc-logo-new.png";
 const Header = () => {
   return <header className="bg-white shadow-corporate sticky top-0 z-50 border-b border-corporate-gray">
@@ -11,22 +12,31 @@ const Header = () => {
           </div>
           
           <div className="flex items-center gap-6">
-            <nav className="hidden lg:flex items-center gap-10">
-              <a href="/" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+            <nav className="hidden lg:flex items-center gap-8">
+              <Link to="/" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
                 Home
-              </a>
-              <a href="/products" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+              </Link>
+              <Link to="/about" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+                About Us
+              </Link>
+              <Link to="/products" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
                 Products
-              </a>
-              <a href="/contact" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+              </Link>
+              <Link to="/quality" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+                Quality & Compliance
+              </Link>
+              <Link to="/careers" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
+                Careers
+              </Link>
+              <Link to="/contact" className="nav-link text-foreground hover:text-primary font-medium text-sm uppercase tracking-wider">
                 Contact
-              </a>
+              </Link>
             </nav>
             
             
             
             <Button asChild className="hidden lg:inline-flex bg-primary hover:bg-primary/90 text-white font-medium tracking-wide shadow-corporate">
-              <a href="/contact">Get Quote</a>
+              <Link to="/contact">Get Quote</Link>
             </Button>
             
             {/* Mobile Menu */}
@@ -38,15 +48,24 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent className="bg-background">
                 <nav className="flex flex-col gap-6 mt-6">
-                  <a href="/" className="text-lg font-medium text-foreground hover:text-primary">
+                  <Link to="/" className="text-lg font-medium text-foreground hover:text-primary">
                     Home
-                  </a>
-                  <a href="/products" className="text-lg font-medium text-foreground hover:text-primary">
+                  </Link>
+                  <Link to="/about" className="text-lg font-medium text-foreground hover:text-primary">
+                    About Us
+                  </Link>
+                  <Link to="/products" className="text-lg font-medium text-foreground hover:text-primary">
                     Products
-                  </a>
-                  <a href="/contact" className="text-lg font-medium text-foreground hover:text-primary">
+                  </Link>
+                  <Link to="/quality" className="text-lg font-medium text-foreground hover:text-primary">
+                    Quality & Compliance
+                  </Link>
+                  <Link to="/careers" className="text-lg font-medium text-foreground hover:text-primary">
+                    Careers
+                  </Link>
+                  <Link to="/contact" className="text-lg font-medium text-foreground hover:text-primary">
                     Contact
-                  </a>
+                  </Link>
                   <div className="pt-4 border-t border-border">
                     <div className="space-y-3 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">

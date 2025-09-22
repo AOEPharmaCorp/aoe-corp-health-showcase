@@ -38,25 +38,45 @@ const ContactForm = () => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const form = e.target as HTMLFormElement;
+      const data = new FormData(form);
+      
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data as any).toString(),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Thank You!",
+          description: "We've received your inquiry and will get back to you within 24 hours. Our typical response time is 2-4 hours during business hours.",
+        });
+        
+        // Reset form
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          organization: "",
+          subject: "",
+          message: "",
+          contactMethod: "email",
+          consent: false
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
       toast({
-        title: "Thank You!",
-        description: "We've received your inquiry and will get back to you as soon as possible.",
+        title: "Submission Error",
+        description: "There was an error submitting your inquiry. Please try again or contact us directly.",
+        variant: "destructive"
       });
+    } finally {
       setIsSubmitting(false);
-      // Reset form
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        organization: "",
-        subject: "",
-        message: "",
-        contactMethod: "email",
-        consent: false
-      });
-    }, 2000);
+    }
   };
 
   const productCategories = [
@@ -140,7 +160,16 @@ const ContactForm = () => {
                   <CardTitle className="text-2xl text-primary">Send Us Your Inquiry</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="fullName" className="text-base font-medium">
@@ -148,6 +177,7 @@ const ContactForm = () => {
                         </Label>
                         <Input
                           id="fullName"
+                          name="fullName"
                           required
                           value={formData.fullName}
                           onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
