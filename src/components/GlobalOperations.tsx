@@ -15,7 +15,7 @@ const GlobalOperations = () => {
             <CardContent className="p-8 text-center">
               <Building className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-gray-50">Regional Offices</h3>
-              <p className="text-2xl font-bold text-accent mb-1">2+</p>
+              <p className="text-2xl font-bold mb-1 text-blue-50">2+</p>
               <p className="text-sm text-white/70">India & UAE</p>
             </CardContent>
           </Card>
@@ -24,7 +24,7 @@ const GlobalOperations = () => {
             <CardContent className="p-8 text-center">
               <MapPin className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-gray-50">Market Presence</h3>
-              <p className="text-2xl font-bold text-accent mb-1">3</p>
+              <p className="text-2xl font-bold mb-1 text-blue-50">3</p>
               <p className="text-sm text-white/70">Major Regions</p>
             </CardContent>
           </Card>
@@ -33,7 +33,7 @@ const GlobalOperations = () => {
             <CardContent className="p-8 text-center">
               <Users className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-gray-50">Healthcare Impact</h3>
-              <p className="text-2xl font-bold text-accent mb-1">1M+</p>
+              <p className="text-2xl font-bold mb-1 text-blue-50">1M+</p>
               <p className="text-sm text-white/70">Patients Served</p>
             </CardContent>
           </Card>
@@ -42,7 +42,7 @@ const GlobalOperations = () => {
             <CardContent className="p-8 text-center">
               <TrendingUp className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-gray-50">Growth</h3>
-              <p className="text-2xl font-bold text-accent mb-1">2018</p>
+              <p className="text-2xl font-bold mb-1 text-blue-50">2018</p>
               <p className="text-sm text-white/70">Since Establishment</p>
             </CardContent>
           </Card>
@@ -64,7 +64,7 @@ const GlobalOperations = () => {
           
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <MapPin className="w-6 h-6 text-accent" />
+              <MapPin className="w-6 h-6 text-accent bg-blue-800" />
               <h3 className="text-xl font-semibold">GCC Region</h3>
             </div>
             <ul className="space-y-2 text-white/80">
