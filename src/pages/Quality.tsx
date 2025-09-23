@@ -186,7 +186,7 @@ const Quality = () => {
                         <div className="text-sm text-muted-foreground">Batch Release Rate</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-primary">6</div>
+                        <div className="text-3xl font-bold text-primary">7</div>
                         <div className="text-sm text-muted-foreground">Major Regulatory Approvals</div>
                       </div>
                       <div className="text-center">
