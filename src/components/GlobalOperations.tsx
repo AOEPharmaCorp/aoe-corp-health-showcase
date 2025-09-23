@@ -24,7 +24,8 @@ const GlobalOperations = () => {
             <CardContent className="p-8 text-center">
               <MapPin className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-gray-50">Market Presence</h3>
-              <p className="text-2xl font-bold mb-1 text-blue-50">3</p>
+              <p className="text-2xl font-bold mb-1 text-blue-50">5
+            </p>
               <p className="text-sm text-white/70">Major Regions</p>
             </CardContent>
           </Card>
