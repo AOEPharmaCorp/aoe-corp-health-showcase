@@ -38,11 +38,11 @@ const TherapeuticExpertise = () => {
   return <section className="py-16 bg-blue-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
+          <h2 className="text-3xl font-bold mb-6 flex items-center justify-center gap-3 text-neutral-50">
             <Microscope className="w-8 h-8 text-primary" />
             Therapeutic Expertise Across Key Segments
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg max-w-3xl mx-auto text-gray-300">
             Specialized manufacturing capabilities across critical therapeutic areas with 
             comprehensive regulatory approvals worldwide.
           </p>
