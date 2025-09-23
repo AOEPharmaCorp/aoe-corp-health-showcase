@@ -1,9 +1,7 @@
 import { Target, Eye, Award } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
-
 const AboutSection = () => {
-  return (
-    <section className="py-20 bg-gradient-subtle">
+  return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -17,7 +15,7 @@ const AboutSection = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <Card className="shadow-medium hover:shadow-glow transition-all duration-300 border-0 bg-white">
-            <CardContent className="p-8 text-center">
+            <CardContent className="p-8 text-center px-[35px] py-[35px]">
               <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
@@ -30,7 +28,7 @@ const AboutSection = () => {
           </Card>
           
           <Card className="shadow-medium hover:shadow-glow transition-all duration-300 border-0 bg-white">
-            <CardContent className="p-8 text-center">
+            <CardContent className="p-8 text-center px-[35px] py-[35px]">
               <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Eye className="w-8 h-8 text-white" />
               </div>
@@ -43,7 +41,7 @@ const AboutSection = () => {
           </Card>
           
           <Card className="shadow-medium hover:shadow-glow transition-all duration-300 border-0 bg-white">
-            <CardContent className="p-8 text-center">
+            <CardContent className="p-8 text-center px-[35px] py-[35px]">
               <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
@@ -56,8 +54,6 @@ const AboutSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
