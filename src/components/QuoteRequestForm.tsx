@@ -221,18 +221,20 @@ const QuoteRequestForm = () => {
                     <Label htmlFor="productCategory" className="text-base font-medium">
                       Product Category *
                     </Label>
-                    <Select name="productCategory" required onValueChange={(value) => setFormData(prev => ({ ...prev, productCategory: value }))}>
-                      <SelectTrigger className="h-12">
-                        <SelectValue placeholder="Select product category" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {productCategories.map((category) => (
-                          <SelectItem key={category} value={category}>
-                            {category}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <select 
+                      name="productCategory" 
+                      required 
+                      value={formData.productCategory}
+                      onChange={(e) => setFormData(prev => ({ ...prev, productCategory: e.target.value }))}
+                      className="h-12 px-3 border border-input bg-background rounded-md"
+                    >
+                      <option value="" disabled>Select product category</option>
+                      {productCategories.map((category) => (
+                        <option key={category} value={category}>
+                          {category}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
@@ -271,18 +273,20 @@ const QuoteRequestForm = () => {
                     <Label htmlFor="timeline" className="text-base font-medium">
                       Required Timeline *
                     </Label>
-                    <Select name="timeline" required onValueChange={(value) => setFormData(prev => ({ ...prev, timeline: value }))}>
-                      <SelectTrigger className="h-12">
-                        <SelectValue placeholder="Select timeline" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {timelineOptions.map((timeline) => (
-                          <SelectItem key={timeline} value={timeline}>
-                            {timeline}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <select 
+                      name="timeline" 
+                      required 
+                      value={formData.timeline}
+                      onChange={(e) => setFormData(prev => ({ ...prev, timeline: e.target.value }))}
+                      className="h-12 px-3 border border-input bg-background rounded-md"
+                    >
+                      <option value="" disabled>Select timeline</option>
+                      {timelineOptions.map((timeline) => (
+                        <option key={timeline} value={timeline}>
+                          {timeline}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
@@ -301,10 +305,12 @@ const QuoteRequestForm = () => {
                 </div>
 
                 <div className="flex items-start space-x-3 p-4 bg-muted/50 rounded-lg">
-                  <Checkbox
+                  <input
+                    type="checkbox"
                     id="consent"
+                    name="consent"
                     checked={formData.consent}
-                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consent: !!checked }))}
+                    onChange={(e) => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
                     className="mt-1"
                   />
                   <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer">

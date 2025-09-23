@@ -207,27 +207,29 @@ const ContactForm = () => {
                         <Label htmlFor="phone" className="text-base font-medium">
                           Your Phone Number (Optional)
                         </Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                          className="h-12"
-                          placeholder="+971 XX XXX XXXX"
-                        />
+                         <Input
+                           id="phone"
+                           name="phone"
+                           type="tel"
+                           value={formData.phone}
+                           onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                           className="h-12"
+                           placeholder="+971 XX XXX XXXX"
+                         />
                       </div>
                       
                       <div className="space-y-2">
                         <Label htmlFor="organization" className="text-base font-medium">
                           Your Organization (Optional)
                         </Label>
-                        <Input
-                          id="organization"
-                          value={formData.organization}
-                          onChange={(e) => setFormData(prev => ({ ...prev, organization: e.target.value }))}
-                          className="h-12"
-                          placeholder="Company or organization name"
-                        />
+                         <Input
+                           id="organization"
+                           name="organization"
+                           value={formData.organization}
+                           onChange={(e) => setFormData(prev => ({ ...prev, organization: e.target.value }))}
+                           className="h-12"
+                           placeholder="Company or organization name"
+                         />
                       </div>
                     </div>
 
@@ -235,75 +237,84 @@ const ContactForm = () => {
                       <Label htmlFor="subject" className="text-base font-medium">
                         Subject of Your Inquiry *
                       </Label>
-                      <Select
-                        value={formData.subject}
-                        onValueChange={(value) => setFormData(prev => ({ ...prev, subject: value }))}
-                        required
-                      >
-                        <SelectTrigger className="h-12">
-                          <SelectValue placeholder="Select inquiry type" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-background border-border">
-                          {productCategories.map((category) => (
-                            <SelectItem key={category} value={category}>
-                              {category}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                       <select
+                         name="subject"
+                         value={formData.subject}
+                         onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                         required
+                         className="h-12 px-3 border border-input bg-background rounded-md"
+                       >
+                         <option value="" disabled>Select inquiry type</option>
+                           {productCategories.map((category) => (
+                             <option key={category} value={category}>
+                               {category}
+                             </option>
+                           ))}
+                       </select>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-base font-medium">
                         Your Message *
                       </Label>
-                      <Textarea
-                        id="message"
-                        required
-                        value={formData.message}
-                        onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                        placeholder="Please provide details about your inquiry, including specific products or services you're interested in..."
-                        className="min-h-[120px]"
-                      />
+                       <Textarea
+                         id="message"
+                         name="message"
+                         required
+                         value={formData.message}
+                         onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                         placeholder="Please provide details about your inquiry, including specific products or services you're interested in..."
+                         className="min-h-[120px]"
+                       />
                     </div>
 
                     <div className="space-y-4">
                       <Label className="text-base font-medium">
                         How would you like to be contacted? (Optional)
                       </Label>
-                      <RadioGroup
-                        value={formData.contactMethod}
-                        onValueChange={(value) => setFormData(prev => ({ ...prev, contactMethod: value }))}
-                        className="flex gap-6"
-                      >
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="email" id="email-contact" />
-                          <Label htmlFor="email-contact">Email</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="phone" id="phone-contact" />
-                          <Label htmlFor="phone-contact">Phone</Label>
-                        </div>
-                      </RadioGroup>
+                       <div className="flex gap-6">
+                         <div className="flex items-center space-x-2">
+                           <input 
+                             type="radio" 
+                             name="contactMethod" 
+                             value="email" 
+                             id="email-contact"
+                             checked={formData.contactMethod === "email"}
+                             onChange={(e) => setFormData(prev => ({ ...prev, contactMethod: e.target.value }))}
+                           />
+                           <Label htmlFor="email-contact">Email</Label>
+                         </div>
+                         <div className="flex items-center space-x-2">
+                           <input 
+                             type="radio" 
+                             name="contactMethod" 
+                             value="phone" 
+                             id="phone-contact"
+                             checked={formData.contactMethod === "phone"}
+                             onChange={(e) => setFormData(prev => ({ ...prev, contactMethod: e.target.value }))}
+                           />
+                           <Label htmlFor="phone-contact">Phone</Label>
+                         </div>
+                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3">
-                      <Checkbox
-                        id="consent"
-                        checked={formData.consent}
-                        onCheckedChange={(checked) => 
-                          setFormData(prev => ({ ...prev, consent: checked as boolean }))
-                        }
-                        className="mt-1"
-                      />
-                      <Label 
-                        htmlFor="consent" 
-                        className="text-sm leading-relaxed cursor-pointer"
-                      >
-                        I agree to the Privacy Policy and Terms of Service, and consent to AOE Pharma 
-                        Corporation processing my personal data for the purpose of responding to my inquiry. *
-                      </Label>
-                    </div>
+                     <div className="flex items-start space-x-3">
+                       <input
+                         type="checkbox"
+                         id="consent"
+                         name="consent"
+                         checked={formData.consent}
+                         onChange={(e) => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
+                         className="mt-1"
+                       />
+                       <Label 
+                         htmlFor="consent" 
+                         className="text-sm leading-relaxed cursor-pointer"
+                       >
+                         I agree to the Privacy Policy and Terms of Service, and consent to AOE Pharma 
+                         Corporation processing my personal data for the purpose of responding to my inquiry. *
+                       </Label>
+                     </div>
 
                     <Button
                       type="submit"

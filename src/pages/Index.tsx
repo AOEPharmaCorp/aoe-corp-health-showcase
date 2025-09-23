@@ -3,7 +3,9 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import GlobalOperations from "@/components/GlobalOperations";
+import GlobalCertifications from "@/components/GlobalCertifications";
 import FindUsOn from "@/components/FindUsOn";
+import CookiesBanner from "@/components/CookiesBanner";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,9 +17,11 @@ const Index = () => {
         <AboutSection />
         <ProductsSection />
         <GlobalOperations />
+        <GlobalCertifications />
         <FindUsOn />
       </main>
       <Footer />
+      <CookiesBanner />
     </div>
   );
 };

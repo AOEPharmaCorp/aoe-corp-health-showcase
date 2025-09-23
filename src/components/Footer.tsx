@@ -52,7 +52,23 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-12 pt-8">
+        {/* Global Manufacturing Accreditations */}
+        <div className="bg-primary/5 border-t border-primary/10 mt-12 pt-8 mb-8">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold text-primary mb-4 flex items-center justify-center gap-2">
+              🏅 Globally Accredited Manufacturing Network
+            </h3>
+            <p className="text-sm text-gray-600 mb-4 max-w-4xl mx-auto">
+              Products manufactured in facilities compliant with WHO-GMP, ISO 9001:2015, ISO 14001:2015, GLP, 
+              and approvals from Brazil, Nigeria, Ghana, Peru, Cambodia, Iran, Saudi Arabia, Colombia, Tanzania, and more.
+            </p>
+            <p className="text-sm font-medium text-primary">
+              Trusted Quality. Global Standards. Regulatory Confidence.
+            </p>
+          </div>
+        </div>
+        
+        <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
               © 2024 AOE Pharma Corporation. All rights reserved.
@@ -60,7 +76,7 @@ const Footer = () => {
             <div className="flex items-center gap-6 text-sm text-white/70">
               <span>Quality Assured</span>
               <span>•</span>
-              <span className="text-gray-400">EU, USFDA, WHO GMP Compliant Facilities</span>
+              <span className="text-gray-400">Fully compliant as per the location of operation</span>
               <span>•</span>
               <span className="text-gray-400">Globally Trusted</span>
             </div>
