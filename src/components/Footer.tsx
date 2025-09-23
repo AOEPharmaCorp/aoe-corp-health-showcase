@@ -53,20 +53,7 @@ const Footer = () => {
         </div>
         
         {/* Global Manufacturing Accreditations */}
-        <div className="bg-primary/5 border-t border-primary/10 mt-12 pt-8 mb-8">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-primary mb-4 flex items-center justify-center gap-2">
-              🏅 Globally Accredited Manufacturing Network
-            </h3>
-            <p className="text-sm text-gray-600 mb-4 max-w-4xl mx-auto">
-              Products manufactured in facilities compliant with WHO-GMP, ISO 9001:2015, ISO 14001:2015, GLP, 
-              and approvals from Brazil, Nigeria, Ghana, Peru, Cambodia, Iran, Saudi Arabia, Colombia, Tanzania, and more.
-            </p>
-            <p className="text-sm font-medium text-primary">
-              Trusted Quality. Global Standards. Regulatory Confidence.
-            </p>
-          </div>
-        </div>
+        
         
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
