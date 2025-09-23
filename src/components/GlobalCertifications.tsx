@@ -1,31 +1,45 @@
 import { Shield, Globe, Award, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
-
 const GlobalCertifications = () => {
-  const certifications = [
-    "WHO-GMP", "ISO 9001:2015", "ISO 14001:2015", "GLP", "ANVISA", 
-    "NAFDAC", "FDA", "PIC/S", "TFDA", "DPML", "BoMRA", "SFDA", 
-    "INVIMA", "UAE GMP", "UGANDA GMP", "RWANDA GMP", "EU GMP", 
-    "Colombia Potencia de la Vida GMP"
-  ];
-
-  const regions = [
-    { name: "Brazil", flag: "🇧🇷" },
-    { name: "Nigeria", flag: "🇳🇬" },
-    { name: "Ghana", flag: "🇬🇭" },
-    { name: "Peru", flag: "🇵🇪" },
-    { name: "Cambodia", flag: "🇰🇭" },
-    { name: "Iran", flag: "🇮🇷" },
-    { name: "Saudi Arabia", flag: "🇸🇦" },
-    { name: "Colombia", flag: "🇨🇴" },
-    { name: "Tanzania", flag: "🇹🇿" },
-    { name: "Uganda", flag: "🇺🇬" },
-    { name: "Rwanda", flag: "🇷🇼" },
-    { name: "UAE", flag: "🇦🇪" }
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-subtle">
+  const certifications = ["WHO-GMP", "ISO 9001:2015", "ISO 14001:2015", "GLP", "ANVISA", "NAFDAC", "FDA", "PIC/S", "TFDA", "DPML", "BoMRA", "SFDA", "INVIMA", "UAE GMP", "UGANDA GMP", "RWANDA GMP", "EU GMP", "Colombia Potencia de la Vida GMP"];
+  const regions = [{
+    name: "Brazil",
+    flag: "🇧🇷"
+  }, {
+    name: "Nigeria",
+    flag: "🇳🇬"
+  }, {
+    name: "Ghana",
+    flag: "🇬🇭"
+  }, {
+    name: "Peru",
+    flag: "🇵🇪"
+  }, {
+    name: "Cambodia",
+    flag: "🇰🇭"
+  }, {
+    name: "Iran",
+    flag: "🇮🇷"
+  }, {
+    name: "Saudi Arabia",
+    flag: "🇸🇦"
+  }, {
+    name: "Colombia",
+    flag: "🇨🇴"
+  }, {
+    name: "Tanzania",
+    flag: "🇹🇿"
+  }, {
+    name: "Uganda",
+    flag: "🇺🇬"
+  }, {
+    name: "Rwanda",
+    flag: "🇷🇼"
+  }, {
+    name: "UAE",
+    flag: "🇦🇪"
+  }];
+  return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
@@ -43,16 +57,14 @@ const GlobalCertifications = () => {
               Key Regulatory Accreditations
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
-              {certifications.map((cert, index) => (
-                <Card key={index} className="border-primary/20 hover:border-primary/40 transition-all duration-300">
+              {certifications.map((cert, index) => <Card key={index} className="border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardContent className="p-3 text-center">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 bg-slate-300">
                       <Shield className="w-4 h-4 text-primary" />
                     </div>
                     <p className="text-xs font-medium text-foreground">{cert}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -61,14 +73,12 @@ const GlobalCertifications = () => {
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-center mb-8">Global Manufacturing Network</h3>
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-            {regions.map((region, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-accent/20">
+            {regions.map((region, index) => <Card key={index} className="hover:shadow-lg transition-all duration-300 border-accent/20">
                 <CardContent className="p-4 text-center">
                   <div className="text-2xl mb-2">{region.flag}</div>
                   <p className="text-sm font-medium">{region.name}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
 
@@ -86,8 +96,6 @@ const GlobalCertifications = () => {
           </CardContent>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default GlobalCertifications;
