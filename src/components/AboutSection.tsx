@@ -20,10 +20,7 @@ const AboutSection = () => {
                 <Target className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Our Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To make a positive impact on the world by enhancing the quality of life 
-                for patients and their families through our products and services.
-              </p>
+              <p className="text-muted-foreground leading-relaxed">Serving distributors and healthcare institutions across Asia, GCC, West Africa, and Eastern Europe with reliable pharmaceutical supply chains.</p>
             </CardContent>
           </Card>
           
@@ -32,7 +29,7 @@ const AboutSection = () => {
               <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Eye className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Our Vision</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Quality Assurance</h3>
               <p className="text-muted-foreground leading-relaxed">
                 To be a driving force for positive change in the world of healthcare,
                 leading innovation and excellence in pharmaceutical solutions.
@@ -45,11 +42,8 @@ const AboutSection = () => {
               <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Our Goals</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To become a leading global provider of high-quality, affordable, 
-                and accessible healthcare solutions across all markets we serve.
-              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Regulatory Support</h3>
+              <p className="text-muted-foreground leading-relaxed">Complete regulatory documentation and expert support for smooth market approvals and procurement processes worldwide.</p>
             </CardContent>
           </Card>
         </div>
