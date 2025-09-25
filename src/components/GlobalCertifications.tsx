@@ -74,7 +74,7 @@ const GlobalCertifications = () => {
 
         {/* Callout Quote */}
         <Card className="bg-primary/5 border-primary/20 max-w-4xl mx-auto">
-          <CardContent className="p-8 text-center">
+          <CardContent className="p-8 text-center my-0 mx-0">
             <Award className="w-12 h-12 text-primary mx-auto mb-4" />
             <blockquote className="text-xl italic text-foreground mb-4">
               "We ensure every product is manufactured with integrity, precision, and full regulatory 

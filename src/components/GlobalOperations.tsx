@@ -79,7 +79,7 @@ const GlobalOperations = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <MapPin className="w-6 h-6 text-accent" />
-              <h3 className="text-xl font-semibold">MENA Markets</h3>
+              <h3 className="text-xl font-semibold">Africa & EU Markets</h3>
             </div>
             <ul className="space-y-2 text-white/80">
               <li>• Emerging market recognition</li>
