@@ -177,10 +177,7 @@ const About = () => {
                       </div>
                       <h3 className="text-xl font-semibold">Global Expansion</h3>
                     </div>
-                    <p className="text-muted-foreground">
-                      Today, we serve multiple regions with a comprehensive portfolio of 228+ products across 
-                      key therapeutic areas, maintaining our position as a trusted global pharmaceutical partner.
-                    </p>
+                    <p className="text-muted-foreground">Today, we serve multiple regions with a comprehensive portfolio of 1000+ products across various therapeutic areas, maintaining our position as a trusted global pharmaceutical partner.</p>
                   </CardContent>
                 </Card>
               </div>
