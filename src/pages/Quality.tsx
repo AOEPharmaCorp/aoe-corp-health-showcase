@@ -8,37 +8,37 @@ const Quality = () => {
     name: "EU GMP",
     description: "European Good Manufacturing Practices",
     status: "Certified",
-    color: "bg-green-100 text-green-800",
+    color: "bg-primary/10 text-primary",
     year: "2020"
   }, {
     name: "USFDA",
     description: "US Food and Drug Administration",
     status: "Approved",
-    color: "bg-blue-100 text-blue-800",
+    color: "bg-primary/10 text-primary",
     year: "2021"
   }, {
     name: "WHO GMP",
     description: "World Health Organization Good Manufacturing Practices",
     status: "Certified",
-    color: "bg-purple-100 text-purple-800",
+    color: "bg-primary/10 text-primary",
     year: "2020"
   }, {
     name: "Health Canada",
     description: "Health Canada Approval",
     status: "Approved",
-    color: "bg-red-100 text-red-800",
+    color: "bg-primary/10 text-primary",
     year: "2022"
   }, {
     name: "TGA Australia",
     description: "Therapeutic Goods Administration",
     status: "Listed",
-    color: "bg-yellow-100 text-yellow-800",
+    color: "bg-primary/10 text-primary",
     year: "2022"
   }, {
     name: "UAE MOH",
     description: "UAE Ministry of Health",
     status: "Approved",
-    color: "bg-indigo-100 text-indigo-800",
+    color: "bg-primary/10 text-primary",
     year: "2019"
   }];
   const qualityStandards = [{
