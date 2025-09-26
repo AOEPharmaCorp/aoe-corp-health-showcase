@@ -117,7 +117,7 @@ const About = () => {
                             <div className="text-sm text-muted-foreground">Regions</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-primary">228+</div>
+                            <div className="text-2xl font-bold text-primary">1000+</div>
                             <div className="text-sm text-muted-foreground">Products</div>
                           </div>
                         </div>
