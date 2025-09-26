@@ -30,25 +30,7 @@ const HeroSection = () => {
               <Button variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm bg-sky-500 hover:bg-sky-400" onClick={() => window.location.href = '/contact'}>Contact Us</Button>
             </div>
             
-            <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="text-center">
-                <Globe className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">Asia, W. Africa, E. EU & GCC</div>
-                <div className="text-sm text-white/70">Global Reach</div>
-              </div>
-              <div className="text-center">
-                <Shield className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white"> Fully  
-Compliant</div>
-                <div className="text-sm text-white/70">EU, USFDA, WHO GMP</div>
-              </div>
-              <div className="text-center">
-                <Zap className="w-8 h-8 text-accent mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">Since 
-2018</div>
-                <div className="text-sm text-white/70">Established</div>
-              </div>
-            </div>
+            
           </div>
           
           <div className="flex justify-center">
