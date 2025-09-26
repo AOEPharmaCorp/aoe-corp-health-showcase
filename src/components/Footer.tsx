@@ -63,9 +63,9 @@ const Footer = () => {
             <div className="flex items-center gap-6 text-sm text-white/70">
               <span>Quality Assured</span>
               <span>•</span>
-              <span className="text-gray-400">Fully compliant as per the location of operation</span>
+              <span className="text-gray-400">Fully compliant as per the location of operation*</span>
               <span>•</span>
-              <span className="text-gray-400">Globally Trusted</span>
+              
             </div>
           </div>
         </div>
