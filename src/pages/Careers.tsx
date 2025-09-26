@@ -30,12 +30,12 @@ const Careers = () => {
     experience: "3+ years",
     description: "Coordinate global supply chain operations, manage vendor relationships, and optimize logistics across international markets."
   }, {
-    title: "Business Development Manager",
-    department: "Sales & Marketing",
-    location: "Multiple Locations",
+    title: "Packaging Supervisor",
+    department: "Production",
+    location: "Manufacturing Facility",
     type: "Full-time",
-    experience: "4+ years",
-    description: "Drive business growth and establish partnerships in emerging pharmaceutical markets."
+    experience: "3+ years",
+    description: "Oversees pharmaceutical packaging operations, ensuring products are packed in compliance with regulatory standards and internal SOPs. Coordinates with production, quality, and logistics teams to ensure timely and accurate packaging of goods for domestic and international distribution."
   }, {
     title: "Manufacturing Supervisor",
     department: "Production",
