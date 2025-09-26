@@ -24,13 +24,6 @@ const Careers = () => {
   }];
   const openPositions = [{
     title: "Regulatory Affairs Specialist",
-    department: "Quality & Compliance",
-    location: "Dubai, UAE",
-    type: "Full-time",
-    experience: "5+ years",
-    description: "Lead quality assurance initiatives across multiple product lines and ensure GMP compliance."
-  }, {
-    title: "Regulatory Affairs Specialist",
     department: "Regulatory",
     location: "Remote/Dubai",
     type: "Full-time",
