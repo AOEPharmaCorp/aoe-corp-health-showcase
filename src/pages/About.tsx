@@ -53,9 +53,7 @@ const About = () => {
                   <CardTitle>Global Impact</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    Expanding healthcare access across Asia, Western Africa, Eastern Europe, UAE, and the GCC region.
-                  </p>
+                  <p className="text-muted-foreground">Expanding healthcare access across Asia, Western Africa, Eastern Europe, Asia, UAE, and the GCC region.</p>
                 </CardContent>
               </Card>
 
