@@ -172,9 +172,7 @@ const About = () => {
                 <Card className="corporate-card">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
-                        2024
-                      </div>
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">2023</div>
                       <h3 className="text-xl font-semibold">Global Expansion</h3>
                     </div>
                     <p className="text-muted-foreground">Today, we serve multiple regions with a comprehensive portfolio of 1000+ products across various therapeutic areas, maintaining our position as a trusted global pharmaceutical partner.</p>
