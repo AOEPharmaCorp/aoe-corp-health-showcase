@@ -23,12 +23,12 @@ const Careers = () => {
     description: "Continuous learning opportunities, conference attendance, and educational assistance programs."
   }];
   const openPositions = [{
-    title: "Regulatory Affairs Specialist",
-    department: "Regulatory",
+    title: "Global Supply Chain Coordinator",
+    department: "Supply Chain & Logistics",
     location: "Remote/Dubai",
     type: "Full-time",
     experience: "3+ years",
-    description: "Manage regulatory submissions and maintain compliance across international markets."
+    description: "Coordinate global supply chain operations, manage vendor relationships, and optimize logistics across international markets."
   }, {
     title: "Business Development Manager",
     department: "Sales & Marketing",
