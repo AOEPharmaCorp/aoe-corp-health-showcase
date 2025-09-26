@@ -1,7 +1,39 @@
 import { Shield, Globe, Award, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+
+// Import regulatory logos
+import whoGmpLogo from "@/assets/regulatory/who-gmp.jpg";
+import anvisaLogo from "@/assets/regulatory/anvisa.jpg";
+import glpLogo from "@/assets/regulatory/glp.png";
+import tfdaLogo from "@/assets/regulatory/tfda.jpg";
+import dpmlLogo from "@/assets/regulatory/dpml.png";
+import bomraLogo from "@/assets/regulatory/bomra.png";
+import uaeGmpLogo from "@/assets/regulatory/uae-gmp.png";
+import picsIranLogo from "@/assets/regulatory/pics-iran.png";
+import peruLogo from "@/assets/regulatory/peru.jpg";
+import bulgariaLogo from "@/assets/regulatory/bulgaria.png";
+
 const GlobalCertifications = () => {
-  const certifications = ["WHO-GMP", "ISO 9001:2015", "ISO 14001:2015", "GLP", "ANVISA", "NAFDAC", "FDA", "PIC/S", "TFDA", "DPML", "BoMRA", "SFDA", "INVIMA", "UAE GMP", "UGANDA GMP", "RWANDA GMP", "EU GMP", "Colombia Potencia de la Vida GMP"];
+  const certifications = [
+    { name: "WHO-GMP", logo: whoGmpLogo },
+    { name: "PIC/S", logo: picsIranLogo },
+    { name: "ANVISA", logo: anvisaLogo },
+    { name: "GLP", logo: glpLogo },
+    { name: "TFDA", logo: tfdaLogo },
+    { name: "DPML", logo: dpmlLogo },
+    { name: "BoMRA", logo: bomraLogo },
+    { name: "UAE GMP", logo: uaeGmpLogo },
+    { name: "Peru DIGEMID", logo: peruLogo },
+    { name: "Bulgaria GMP", logo: bulgariaLogo },
+    { name: "ISO 9001:2015", logo: null },
+    { name: "ISO 14001:2015", logo: null },
+    { name: "NAFDAC", logo: null },
+    { name: "FDA", logo: null },
+    { name: "SFDA", logo: null },
+    { name: "INVIMA", logo: null },
+    { name: "UGANDA GMP", logo: null },
+    { name: "RWANDA GMP", logo: null }
+  ];
   const regions = [{
     name: "Brazil",
     flag: "🇧🇷"
@@ -57,14 +89,26 @@ const GlobalCertifications = () => {
               Key Regulatory Accreditations
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
-              {certifications.map((cert, index) => <Card key={index} className="border-primary/20 hover:border-primary/40 transition-all duration-300">
+              {certifications.map((cert, index) => (
+                <Card key={index} className="border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardContent className="p-3 text-center">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 bg-slate-300">
-                      <Shield className="w-4 h-4 text-primary" />
-                    </div>
-                    <p className="text-xs font-medium text-foreground">{cert}</p>
+                    {cert.logo ? (
+                      <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                        <img 
+                          src={cert.logo} 
+                          alt={`${cert.name} logo`}
+                          className="max-w-full max-h-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 bg-primary/10">
+                        <Shield className="w-4 h-4 text-primary" />
+                      </div>
+                    )}
+                    <p className="text-xs font-medium text-foreground">{cert.name}</p>
                   </CardContent>
-                </Card>)}
+                </Card>
+              ))}
             </div>
           </div>
         </div>
@@ -77,8 +121,8 @@ const GlobalCertifications = () => {
           <CardContent className="p-8 text-center my-0 mx-0">
             <Award className="w-12 h-12 text-primary mx-auto mb-4" />
             <blockquote className="text-xl italic text-foreground mb-4">
-              "We ensure every product is manufactured with integrity, precision, and full regulatory 
-              compliance—because your trust is our greatest asset."
+              "We ensure every product is manufactured with integrity, precision, and is fully compliant 
+              as per the location of operation—because your trust is our greatest asset."
             </blockquote>
             <p className="text-sm text-muted-foreground font-medium">
               — AOE Pharma Corporation Quality Commitment

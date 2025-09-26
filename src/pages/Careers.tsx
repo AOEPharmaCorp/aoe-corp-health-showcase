@@ -1,10 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JobApplicationForm from "@/components/JobApplicationForm";
+import JobDetailsDialog from "@/components/JobDetailsDialog";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Heart, Globe, Award, Building, BookOpen, TrendingUp, Shield } from "lucide-react";
+import { useState } from "react";
 const Careers = () => {
+  const [isApplicationFormOpen, setIsApplicationFormOpen] = useState(false);
+  const [isJobDetailsOpen, setIsJobDetailsOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<any>(null);
   const benefits = [{
     icon: Heart,
     title: "Health & Wellness",
@@ -152,8 +158,22 @@ const Careers = () => {
                         <p className="text-muted-foreground">{position.description}</p>
                       </div>
                       <div className="flex flex-col gap-2">
-                        <Button>Apply Now</Button>
-                        <Button variant="outline" size="sm">View Details</Button>
+                        <Button onClick={() => {
+                          setSelectedJob(position);
+                          setIsApplicationFormOpen(true);
+                        }}>
+                          Apply Now
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => {
+                            setSelectedJob(position);
+                            setIsJobDetailsOpen(true);
+                          }}
+                        >
+                          View Details
+                        </Button>
                       </div>
                     </div>
                   </CardContent>
@@ -188,6 +208,28 @@ const Careers = () => {
         </section>
       </main>
       <Footer />
+      
+      {/* Job Application Form */}
+      {selectedJob && (
+        <JobApplicationForm
+          isOpen={isApplicationFormOpen}
+          onClose={() => setIsApplicationFormOpen(false)}
+          jobTitle={selectedJob.title}
+        />
+      )}
+      
+      {/* Job Details Dialog */}
+      {selectedJob && (
+        <JobDetailsDialog
+          isOpen={isJobDetailsOpen}
+          onClose={() => setIsJobDetailsOpen(false)}
+          job={selectedJob}
+          onApply={() => {
+            setIsJobDetailsOpen(false);
+            setIsApplicationFormOpen(true);
+          }}
+        />
+      )}
     </div>;
 };
 export default Careers;

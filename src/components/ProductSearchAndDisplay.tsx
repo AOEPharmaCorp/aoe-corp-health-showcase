@@ -12,7 +12,8 @@ import { useToast } from "./ui/use-toast";
 interface Product {
   id: string;
   product_code?: string | null;
-  name: string;
+  generic_name?: string;
+  name?: string;
   dosage_form: string;
   category: string;
   moq: string | null;
@@ -65,8 +66,11 @@ const ProductSearchAndDisplay = () => {
 
     if (searchTerm) {
       filtered = filtered.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (product.product_code && product.product_code.toLowerCase().includes(searchTerm.toLowerCase()))
+        (product.generic_name && product.generic_name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (product.product_code && product.product_code.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        product.dosage_form.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
@@ -78,7 +82,19 @@ const ProductSearchAndDisplay = () => {
       filtered = filtered.filter(product => product.dosage_form === dosageFilter);
     }
 
-    setFilteredProducts(filtered);
+    // Limit to 20+ products per category for display
+    const categorizedProducts: { [key: string]: Product[] } = {};
+    filtered.forEach(product => {
+      if (!categorizedProducts[product.category]) {
+        categorizedProducts[product.category] = [];
+      }
+      if (categorizedProducts[product.category].length < 25) {
+        categorizedProducts[product.category].push(product);
+      }
+    });
+
+    const limitedProducts = Object.values(categorizedProducts).flat();
+    setFilteredProducts(limitedProducts);
   }, [searchTerm, categoryFilter, dosageFilter, products]);
 
   const addToQuote = (product: Product) => {
@@ -86,7 +102,7 @@ const ProductSearchAndDisplay = () => {
       setQuote([...quote, product]);
       toast({
         title: "Added to Quote",
-        description: `${product.name} has been added to your quote request.`
+        description: `${product.generic_name || product.name} has been added to your quote request.`
       });
     }
   };
@@ -171,7 +187,7 @@ const ProductSearchAndDisplay = () => {
               <div className="flex flex-wrap gap-2 mb-4">
                 {quote.map(product => (
                   <Badge key={product.id} variant="secondary" className="text-sm">
-                    {product.name}
+                    {product.generic_name || product.name}
                     <X 
                       className="w-3 h-3 ml-1 cursor-pointer" 
                       onClick={() => removeFromQuote(product.id)}
@@ -194,7 +210,7 @@ const ProductSearchAndDisplay = () => {
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
                     <CardTitle className="text-lg leading-tight mb-2">
-                      {product.name}
+                      {product.generic_name || product.name}
                     </CardTitle>
                     <CardDescription className="text-sm">
                       {product.product_code && (
@@ -240,7 +256,7 @@ const ProductSearchAndDisplay = () => {
                       <DialogContent className="max-w-2xl">
                         <DialogHeader>
                           <DialogTitle className="text-xl">
-                            {product.name}
+                            {product.generic_name || product.name}
                           </DialogTitle>
                         </DialogHeader>
                         <div className="space-y-6">
@@ -259,7 +275,7 @@ const ProductSearchAndDisplay = () => {
                               </h3>
                               <div className="space-y-2 text-sm">
                                 <p><span className="font-medium">Product Code:</span> {product.product_code || "Contact for details"}</p>
-                                <p><span className="font-medium">Product Name:</span> {product.name}</p>
+                                <p><span className="font-medium">Product Name:</span> {product.generic_name || product.name}</p>
                                 <p><span className="font-medium">Dosage Form:</span> {product.dosage_form}</p>
                                 <p><span className="font-medium">Category:</span> {product.category}</p>
                               </div>
