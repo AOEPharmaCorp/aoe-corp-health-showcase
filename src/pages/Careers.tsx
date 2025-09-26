@@ -23,7 +23,7 @@ const Careers = () => {
     description: "Continuous learning opportunities, conference attendance, and educational assistance programs."
   }];
   const openPositions = [{
-    title: "Senior Quality Assurance Manager",
+    title: "Regulatory Affairs Specialist",
     department: "Quality & Compliance",
     location: "Dubai, UAE",
     type: "Full-time",
