@@ -13,9 +13,9 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-5xl font-bold text-white leading-tight lg:text-8xl">
                 Rising Strong in
-                <span className="block bg-gradient-to-r from-accent to-white bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-accent to-white bg-clip-text text-transparent text-8xl">
                   Global Healthcare
                 </span>
               </h1>
