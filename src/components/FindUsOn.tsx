@@ -1,31 +1,24 @@
 import sapAribaLogo from "@/assets/sap-ariba-logo.png";
 import zakupivliLogo from "@/assets/zakupivli-pro-logo.png";
 import prozorroLogo from "@/assets/prozorro-logo.svg";
-
 const FindUsOn = () => {
-  const platforms = [
-    {
-      name: "SAP Ariba",
-      logo: sapAribaLogo,
-      url: "https://service.ariba.com/",
-      description: "Global procurement platform"
-    },
-    {
-      name: "Zakupivli.pro",
-      logo: zakupivliLogo,
-      url: "https://zakupivli.pro/en", 
-      description: "Professional procurement network"
-    },
-    {
-      name: "ProZorro",
-      logo: prozorroLogo,
-      url: "https://prozorro.gov.ua/en",
-      description: "Transparent public procurement"
-    }
-  ];
-
-  return (
-    <section className="py-16 bg-muted/30">
+  const platforms = [{
+    name: "SAP Ariba",
+    logo: sapAribaLogo,
+    url: "https://service.ariba.com/",
+    description: "Global procurement platform"
+  }, {
+    name: "Zakupivli.pro",
+    logo: zakupivliLogo,
+    url: "https://zakupivli.pro/en",
+    description: "Professional procurement network"
+  }, {
+    name: "ProZorro",
+    logo: prozorroLogo,
+    url: "https://prozorro.gov.ua/en",
+    description: "Transparent public procurement"
+  }];
+  return <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4">Find Us On</h2>
@@ -35,19 +28,10 @@ const FindUsOn = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {platforms.map((platform) => (
-            <a
-              key={platform.name}
-              href={platform.url}
-              className="group bg-background rounded-2xl p-8 shadow-sm hover:shadow-elegant transition-all duration-300 border border-border hover:border-primary/20"
-            >
+          {platforms.map(platform => <a key={platform.name} href={platform.url} className="group bg-background rounded-2xl p-8 shadow-sm hover:shadow-elegant transition-all duration-300 border border-border hover:border-primary/20">
               <div className="text-center space-y-4">
-                <div className="h-16 flex items-center justify-center">
-                  <img
-                    src={platform.logo}
-                    alt={`${platform.name} logo`}
-                    className="max-h-12 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                  />
+                <div className="h-16 flex items-center justify-center my-[30px] px-[30px] mx-[20px] py-[20px]">
+                  <img src={platform.logo} alt={`${platform.name} logo`} className="max-h-12 max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground mb-2">
@@ -58,12 +42,9 @@ const FindUsOn = () => {
                   </p>
                 </div>
               </div>
-            </a>
-          ))}
+            </a>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FindUsOn;
