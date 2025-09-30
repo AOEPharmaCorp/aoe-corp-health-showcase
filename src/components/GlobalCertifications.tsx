@@ -109,7 +109,7 @@ const GlobalCertifications = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
-            <Globe className="w-10 h-10 text-primary" />
+            
             Global Quality Standards You Can Trust
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8">At AOE Pharma, we manufacture pharmaceutical products in facilities certified by leading global health authorities. Our commitment to quality, safety, and regulatory excellence is backed by a broad portfolio of international accreditations.</p>
