@@ -89,7 +89,7 @@ const ContactForm = () => {
             <div className="space-y-8">
               <Card className="border-primary/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-primary">Get In Touch</CardTitle>
+                  <CardTitle className="text-xl text-blue-800">Get In Touch</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -137,7 +137,7 @@ const ContactForm = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-elegant">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">Send Us Your Inquiry</CardTitle>
+                  <CardTitle className="text-2xl text-blue-800">Send Us Your Inquiry</CardTitle>
                 </CardHeader>
                 <CardContent>
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-6">
