@@ -29,7 +29,7 @@ const About = () => {
         {/* Company Values */}
         <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Our Core Values</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="corporate-card text-center">
                 <CardHeader>
@@ -77,7 +77,7 @@ const About = () => {
         {/* Leadership Team */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Leadership Excellence</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Leadership Excellence</h2>
             <div className="max-w-4xl mx-auto">
               <Card className="corporate-card">
                 <CardContent className="p-8">
@@ -133,7 +133,7 @@ const About = () => {
         {/* Company History */}
         <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Our Journey</h2>
             <div className="max-w-4xl mx-auto">
               <div className="space-y-8">
                 <Card className="corporate-card">

@@ -4,7 +4,7 @@ const AboutSection = () => {
   return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-blue-800">
             Our Philosophy
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
