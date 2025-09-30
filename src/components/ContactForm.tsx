@@ -80,7 +80,7 @@ const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Contact Us</h2>
+            <h2 className="text-4xl font-bold mb-6 text-blue-800">Contact Us</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Ready to partner with us or learn more about our pharmaceutical solutions? Get in touch with our team of experts.</p>
           </div>
 
