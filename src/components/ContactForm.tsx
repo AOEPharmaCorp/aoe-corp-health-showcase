@@ -9,7 +9,6 @@ import { Checkbox } from "./ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "./ui/use-toast";
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -21,10 +20,10 @@ const ContactForm = () => {
     contactMethod: "email",
     consent: false
   });
-  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.consent) {
@@ -35,25 +34,23 @@ const ContactForm = () => {
       });
       return;
     }
-    
     setIsSubmitting(true);
-    
     try {
       const form = e.target as HTMLFormElement;
       const data = new FormData(form);
-      
       const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data as any).toString(),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(data as any).toString()
       });
-
       if (response.ok) {
         toast({
           title: "Thank You!",
-          description: "We've received your inquiry and will get back to you within 24 hours. Our typical response time is 2-4 hours during business hours.",
+          description: "We've received your inquiry and will get back to you within 24 hours. Our typical response time is 2-4 hours during business hours."
         });
-        
+
         // Reset form
         setFormData({
           fullName: "",
@@ -78,30 +75,13 @@ const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
-
-  const productCategories = [
-    "Product Information",
-    "Pharmaceutical Products",
-    "Specialty Medicines", 
-    "Generic Medications",
-    "Active Pharmaceutical Ingredients",
-    "Cosmeceuticals",
-    "Partnership Inquiry",
-    "Technical Support",
-    "General Questions",
-    "Feedback"
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-subtle">
+  const productCategories = ["Product Information", "Pharmaceutical Products", "Specialty Medicines", "Generic Medications", "Active Pharmaceutical Ingredients", "Cosmeceuticals", "Partnership Inquiry", "Technical Support", "General Questions", "Feedback"];
+  return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-6">Contact Us</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to partner with us or learn more about our pharmaceutical solutions? 
-              Get in touch with our team of experts.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Ready to partner with us or learn more about our pharmaceutical solutions? Get in touch with our team of experts.</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
@@ -160,14 +140,7 @@ const ContactForm = () => {
                   <CardTitle className="text-2xl text-primary">Send Us Your Inquiry</CardTitle>
                 </CardHeader>
                 <CardContent>
-          <form 
-            name="contact" 
-            method="POST" 
-            data-netlify="true" 
-            netlify-honeypot="bot-field"
-            onSubmit={handleSubmit} 
-            className="space-y-6"
-          >
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-6">
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
                     <div className="grid md:grid-cols-2 gap-6">
@@ -175,30 +148,20 @@ const ContactForm = () => {
                         <Label htmlFor="fullName" className="text-base font-medium">
                           Your Full Name *
                         </Label>
-                        <Input
-                          id="fullName"
-                          name="fullName"
-                          required
-                          value={formData.fullName}
-                          onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
-                          className="h-12"
-                          placeholder="Enter your full name"
-                        />
+                        <Input id="fullName" name="fullName" required value={formData.fullName} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        fullName: e.target.value
+                      }))} className="h-12" placeholder="Enter your full name" />
                       </div>
                       
                       <div className="space-y-2">
                         <Label htmlFor="email" className="text-base font-medium">
                           Your Email Address *
                         </Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                          className="h-12"
-                          placeholder="your.email@company.com"
-                        />
+                        <Input id="email" type="email" required value={formData.email} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        email: e.target.value
+                      }))} className="h-12" placeholder="your.email@company.com" />
                       </div>
                     </div>
 
@@ -207,29 +170,20 @@ const ContactForm = () => {
                         <Label htmlFor="phone" className="text-base font-medium">
                           Your Phone Number (Optional)
                         </Label>
-                         <Input
-                           id="phone"
-                           name="phone"
-                           type="tel"
-                           value={formData.phone}
-                           onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                           className="h-12"
-                           placeholder="+971 XX XXX XXXX"
-                         />
+                         <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        phone: e.target.value
+                      }))} className="h-12" placeholder="+971 XX XXX XXXX" />
                       </div>
                       
                       <div className="space-y-2">
                         <Label htmlFor="organization" className="text-base font-medium">
                           Your Organization (Optional)
                         </Label>
-                         <Input
-                           id="organization"
-                           name="organization"
-                           value={formData.organization}
-                           onChange={(e) => setFormData(prev => ({ ...prev, organization: e.target.value }))}
-                           className="h-12"
-                           placeholder="Company or organization name"
-                         />
+                         <Input id="organization" name="organization" value={formData.organization} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        organization: e.target.value
+                      }))} className="h-12" placeholder="Company or organization name" />
                       </div>
                     </div>
 
@@ -237,19 +191,14 @@ const ContactForm = () => {
                       <Label htmlFor="subject" className="text-base font-medium">
                         Subject of Your Inquiry *
                       </Label>
-                       <select
-                         name="subject"
-                         value={formData.subject}
-                         onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
-                         required
-                         className="h-12 px-3 border border-input bg-background rounded-md"
-                       >
+                       <select name="subject" value={formData.subject} onChange={e => setFormData(prev => ({
+                      ...prev,
+                      subject: e.target.value
+                    }))} required className="h-12 px-3 border border-input bg-background rounded-md">
                          <option value="" disabled>Select inquiry type</option>
-                           {productCategories.map((category) => (
-                             <option key={category} value={category}>
+                           {productCategories.map(category => <option key={category} value={category}>
                                {category}
-                             </option>
-                           ))}
+                             </option>)}
                        </select>
                     </div>
 
@@ -257,15 +206,10 @@ const ContactForm = () => {
                       <Label htmlFor="message" className="text-base font-medium">
                         Your Message *
                       </Label>
-                       <Textarea
-                         id="message"
-                         name="message"
-                         required
-                         value={formData.message}
-                         onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                         placeholder="Please provide details about your inquiry, including specific products or services you're interested in..."
-                         className="min-h-[120px]"
-                       />
+                       <Textarea id="message" name="message" required value={formData.message} onChange={e => setFormData(prev => ({
+                      ...prev,
+                      message: e.target.value
+                    }))} placeholder="Please provide details about your inquiry, including specific products or services you're interested in..." className="min-h-[120px]" />
                     </div>
 
                     <div className="space-y-4">
@@ -274,54 +218,34 @@ const ContactForm = () => {
                       </Label>
                        <div className="flex gap-6">
                          <div className="flex items-center space-x-2">
-                           <input 
-                             type="radio" 
-                             name="contactMethod" 
-                             value="email" 
-                             id="email-contact"
-                             checked={formData.contactMethod === "email"}
-                             onChange={(e) => setFormData(prev => ({ ...prev, contactMethod: e.target.value }))}
-                           />
+                           <input type="radio" name="contactMethod" value="email" id="email-contact" checked={formData.contactMethod === "email"} onChange={e => setFormData(prev => ({
+                          ...prev,
+                          contactMethod: e.target.value
+                        }))} />
                            <Label htmlFor="email-contact">Email</Label>
                          </div>
                          <div className="flex items-center space-x-2">
-                           <input 
-                             type="radio" 
-                             name="contactMethod" 
-                             value="phone" 
-                             id="phone-contact"
-                             checked={formData.contactMethod === "phone"}
-                             onChange={(e) => setFormData(prev => ({ ...prev, contactMethod: e.target.value }))}
-                           />
+                           <input type="radio" name="contactMethod" value="phone" id="phone-contact" checked={formData.contactMethod === "phone"} onChange={e => setFormData(prev => ({
+                          ...prev,
+                          contactMethod: e.target.value
+                        }))} />
                            <Label htmlFor="phone-contact">Phone</Label>
                          </div>
                        </div>
                     </div>
 
                      <div className="flex items-start space-x-3">
-                       <input
-                         type="checkbox"
-                         id="consent"
-                         name="consent"
-                         checked={formData.consent}
-                         onChange={(e) => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
-                         className="mt-1"
-                       />
-                       <Label 
-                         htmlFor="consent" 
-                         className="text-sm leading-relaxed cursor-pointer"
-                       >
+                       <input type="checkbox" id="consent" name="consent" checked={formData.consent} onChange={e => setFormData(prev => ({
+                      ...prev,
+                      consent: e.target.checked
+                    }))} className="mt-1" />
+                       <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer">
                          I agree to the Privacy Policy and Terms of Service, and consent to AOE Pharma 
                          Corporation processing my personal data for the purpose of responding to my inquiry. *
                        </Label>
                      </div>
 
-                    <Button
-                      type="submit"
-                      size="lg"
-                      disabled={isSubmitting}
-                      className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white shadow-glow group"
-                    >
+                    <Button type="submit" size="lg" disabled={isSubmitting} className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white shadow-glow group">
                       {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                       <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -332,8 +256,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactForm;
