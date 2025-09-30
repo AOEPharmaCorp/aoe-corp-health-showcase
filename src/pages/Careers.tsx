@@ -92,7 +92,7 @@ const Careers = () => {
         {/* Why Join Us */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose AOE Pharma?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Why Choose AOE Pharma?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => {
               const IconComponent = value.icon;
@@ -115,7 +115,7 @@ const Careers = () => {
         {/* Benefits */}
         <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Employee Benefits</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Employee Benefits</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
@@ -140,7 +140,7 @@ const Careers = () => {
         {/* Open Positions */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Current Opportunities</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Current Opportunities</h2>
             <div className="max-w-4xl mx-auto space-y-6">
               {openPositions.map((position, index) => <Card key={index} className="corporate-card hover:shadow-medium transition-all duration-300">
                   <CardContent className="p-6">
@@ -159,19 +159,15 @@ const Careers = () => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <Button onClick={() => {
-                          setSelectedJob(position);
-                          setIsApplicationFormOpen(true);
-                        }}>
+                      setSelectedJob(position);
+                      setIsApplicationFormOpen(true);
+                    }}>
                           Apply Now
                         </Button>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => {
-                            setSelectedJob(position);
-                            setIsJobDetailsOpen(true);
-                          }}
-                        >
+                        <Button variant="outline" size="sm" onClick={() => {
+                      setSelectedJob(position);
+                      setIsJobDetailsOpen(true);
+                    }}>
                           View Details
                         </Button>
                       </div>
@@ -189,7 +185,7 @@ const Careers = () => {
         <section className="py-16">
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Ready to Make an Impact?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-blue-800">Ready to Make an Impact?</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Don't see the perfect role? We're always looking for talented individuals 
                 to join our growing team. Send us your resume and tell us how you'd like 
@@ -210,26 +206,13 @@ const Careers = () => {
       <Footer />
       
       {/* Job Application Form */}
-      {selectedJob && (
-        <JobApplicationForm
-          isOpen={isApplicationFormOpen}
-          onClose={() => setIsApplicationFormOpen(false)}
-          jobTitle={selectedJob.title}
-        />
-      )}
+      {selectedJob && <JobApplicationForm isOpen={isApplicationFormOpen} onClose={() => setIsApplicationFormOpen(false)} jobTitle={selectedJob.title} />}
       
       {/* Job Details Dialog */}
-      {selectedJob && (
-        <JobDetailsDialog
-          isOpen={isJobDetailsOpen}
-          onClose={() => setIsJobDetailsOpen(false)}
-          job={selectedJob}
-          onApply={() => {
-            setIsJobDetailsOpen(false);
-            setIsApplicationFormOpen(true);
-          }}
-        />
-      )}
+      {selectedJob && <JobDetailsDialog isOpen={isJobDetailsOpen} onClose={() => setIsJobDetailsOpen(false)} job={selectedJob} onApply={() => {
+      setIsJobDetailsOpen(false);
+      setIsApplicationFormOpen(true);
+    }} />}
     </div>;
 };
 export default Careers;
