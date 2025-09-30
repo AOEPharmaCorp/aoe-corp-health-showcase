@@ -123,7 +123,7 @@ const ContactForm = () => {
 
               <Card className="border-accent/20">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-4">Business Hours</h3>
+                  <h3 className="font-semibold text-lg mb-4 text-blue-800">Business Hours</h3>
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <p>Monday - Friday: 9:00 AM - 6:00 PM GST</p>
                     <p>Saturday: 9:00 AM - 1:00 PM GST</p>
