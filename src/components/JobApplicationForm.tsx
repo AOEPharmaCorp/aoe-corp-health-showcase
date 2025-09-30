@@ -169,7 +169,7 @@ const JobApplicationForm = ({
 
           {/* Cover Letter */}
           <div>
-            <Label htmlFor="coverLetter">Cover Letter</Label>
+            <Label htmlFor="coverLetter">Cover Letter*</Label>
             <Textarea id="coverLetter" name="coverLetter" value={formData.coverLetter} onChange={handleInputChange} placeholder="Tell us why you're interested in this position and what makes you a great fit..." rows={6} className="resize-none" />
           </div>
 
