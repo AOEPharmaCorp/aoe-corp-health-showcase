@@ -30,7 +30,7 @@ const FindUsOn = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {platforms.map(platform => <a key={platform.name} href={platform.url} className="group bg-background rounded-2xl p-8 shadow-sm hover:shadow-elegant transition-all duration-300 border border-border hover:border-primary/20">
               <div className="text-center space-y-4">
-                <div className="h-16 flex items-center justify-center my-[30px] px-[30px] mx-[20px] py-[20px]">
+                <div className="h-16 flex items-center justify-center mx-0 my-0 py-0 px-[50px]">
                   <img src={platform.logo} alt={`${platform.name} logo`} className="max-h-12 max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div>
