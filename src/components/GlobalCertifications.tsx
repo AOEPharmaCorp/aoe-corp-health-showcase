@@ -108,14 +108,14 @@ const GlobalCertifications = () => {
   return <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
+          <h2 className="text-4xl font-bold mb-6 flex items-center justify-center gap-3 text-blue-800">
             
             Global Quality Standards You Can Trust
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8">At AOE Pharma, we manufacture pharmaceutical products in facilities certified by leading global health authorities. Our commitment to quality, safety, and regulatory excellence is backed by a broad portfolio of international accreditations.</p>
           
           <div className="mb-12">
-            <h3 className="text-2xl font-semibold text-foreground mb-6 flex items-center justify-center gap-2">
+            <h3 className="text-2xl font-semibold mb-6 flex items-center justify-center gap-2 text-blue-800">
               <CheckCircle className="w-6 h-6 text-primary" />
               Key Regulatory Accreditations
             </h3>
