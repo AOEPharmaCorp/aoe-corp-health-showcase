@@ -21,7 +21,7 @@ const FindUsOn = () => {
   return <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Find Us On</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue-800">Find Us On</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Connect with us on leading global procurement platforms for seamless business partnerships
           </p>
