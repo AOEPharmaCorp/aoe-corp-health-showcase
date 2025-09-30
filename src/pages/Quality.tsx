@@ -80,7 +80,7 @@ const Quality = () => {
         {/* Regulatory Certifications */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Regulatory Certifications</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Regulatory Certifications</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => <Card key={index} className="corporate-card">
                   <CardHeader className="text-center">
@@ -104,7 +104,7 @@ const Quality = () => {
         {/* Quality Standards */}
         <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Quality Management Standards</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Quality Management Standards</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {qualityStandards.map((standard, index) => {
               const IconComponent = standard.icon;
@@ -129,7 +129,7 @@ const Quality = () => {
         {/* Compliance Framework */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Comprehensive Compliance Framework</h2>
+            <h2 className="text-3xl text-center mb-12 font-bold text-blue-800">Comprehensive Compliance Framework</h2>
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -204,7 +204,7 @@ const Quality = () => {
         {/* Quality Assurance Process */}
         <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Quality Assurance Process</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Quality Assurance Process</h2>
             <div className="max-w-4xl mx-auto">
               <div className="space-y-8">
                 <Card className="corporate-card">
