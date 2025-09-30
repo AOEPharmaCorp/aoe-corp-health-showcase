@@ -63,7 +63,7 @@ const Footer = () => {
             <div className="flex items-center gap-6 text-sm text-white/70">
               <span>Quality Assured</span>
               <span>•</span>
-              <span className="text-gray-400">Fully compliant as per the location of operation*</span>
+              <span className="text-gray-400 px-0 my-0 mx-0 py-[11px]">Fully compliant with local regulatory requirements*</span>
               <span>•</span>
               
             </div>
