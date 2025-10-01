@@ -71,7 +71,7 @@ const Careers = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <div className="bg-gradient-primary text-white py-20 bg-blue-800">
+        <div className="bg-gradient-primary text-white py-20 bg-blue-800 rounded-none">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl">
               <h1 className="text-5xl font-bold mb-6">
