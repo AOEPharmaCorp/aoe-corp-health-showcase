@@ -1,9 +1,12 @@
-import { Building2, Mail, MapPin, Phone, Globe } from "lucide-react";
+import { Building2, Mail, MapPin, Phone, Globe, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import companyLogo from "@/assets/apc-logo-new.png";
+import sapAribaLogo from "@/assets/sap-ariba-logo.png";
+import zakupivliLogo from "@/assets/zakupivli-pro-logo.png";
+import prozorroLogo from "@/assets/prozorro-logo.svg";
 const Footer = () => {
-  return <footer className="bg-foreground text-white">
-      <div className="container mx-auto px-4 py-12 bg-white">
+  return <footer className="bg-background text-foreground">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2 space-y-6">
             <img src={companyLogo} alt="AOE Pharma Corporation" className="h-16 w-auto" />
@@ -13,7 +16,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="space-y-6 bg-white">
+          <div className="space-y-6">
             <h4 className="text-lg font-semibold text-gray-400">Contact Information</h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -48,6 +51,30 @@ const Footer = () => {
               <Link to="/quality" className="block text-gray-400 hover:text-primary transition-colors">Quality & Compliance</Link>
               <Link to="/careers" className="block text-gray-400 hover:text-primary transition-colors">Careers</Link>
               <Link to="/contact" className="block text-gray-400 hover:text-primary transition-colors">Contact</Link>
+            </div>
+            
+            <div className="space-y-4 mt-8">
+              <h4 className="text-lg font-semibold text-zinc-400">Connect With Us</h4>
+              <a href="https://www.linkedin.com/company/aoe-pharma-corporation-llc/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
+                <span>LinkedIn</span>
+              </a>
+              
+              <h5 className="text-sm font-semibold text-zinc-400 mt-6">Find Us On</h5>
+              <div className="space-y-3">
+                <a href="https://service.ariba.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors">
+                  <img src={sapAribaLogo} alt="SAP Ariba" className="h-4 w-auto" />
+                  <span className="text-sm">SAP Ariba</span>
+                </a>
+                <a href="https://zakupivli.pro/en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors">
+                  <img src={zakupivliLogo} alt="Zakupivli" className="h-4 w-auto" />
+                  <span className="text-sm">Zakupivli.pro</span>
+                </a>
+                <a href="https://prozorro.gov.ua/en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors">
+                  <img src={prozorroLogo} alt="ProZorro" className="h-4 w-auto" />
+                  <span className="text-sm">ProZorro</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

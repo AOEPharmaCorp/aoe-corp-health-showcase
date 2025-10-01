@@ -12,6 +12,16 @@ import uaeGmpLogo from "@/assets/regulatory/uae-gmp.png";
 import picsIranLogo from "@/assets/regulatory/pics-iran.png";
 import peruLogo from "@/assets/regulatory/peru.jpg";
 import bulgariaLogo from "@/assets/regulatory/bulgaria.png";
+import fdaPhilippinesLogo from "@/assets/regulatory/fda-philippines.jpg";
+import colombiaPotenciaLogo from "@/assets/regulatory/colombia-potencia.png";
+import invimaColombiaLogo from "@/assets/regulatory/invima-colombia.png";
+import cambodiaGmpLogo from "@/assets/regulatory/cambodia-gmp.png";
+import fdaGhanaLogo from "@/assets/regulatory/fda-ghana.png";
+import iso9001Logo from "@/assets/regulatory/iso-9001.png";
+import iso14001Logo from "@/assets/regulatory/iso-14001.jpg";
+import rwandaGmpLogo from "@/assets/regulatory/rwanda-gmp.jpeg";
+import nafdacNigeriaLogo from "@/assets/regulatory/nafdac-nigeria.jpg";
+import sfdaLogo from "@/assets/regulatory/sfda.png";
 const GlobalCertifications = () => {
   const certifications = [{
     name: "WHO-GMP",
@@ -45,28 +55,34 @@ const GlobalCertifications = () => {
     logo: bulgariaLogo
   }, {
     name: "ISO 9001:2015",
-    logo: null
+    logo: iso9001Logo
   }, {
     name: "ISO 14001:2015",
-    logo: null
+    logo: iso14001Logo
   }, {
-    name: "NAFDAC",
-    logo: null
+    name: "NAFDAC Nigeria",
+    logo: nafdacNigeriaLogo
   }, {
-    name: "FDA",
-    logo: null
+    name: "FDA Philippines",
+    logo: fdaPhilippinesLogo
   }, {
-    name: "SFDA",
-    logo: null
+    name: "FDA Ghana",
+    logo: fdaGhanaLogo
   }, {
-    name: "INVIMA",
-    logo: null
+    name: "SFDA Saudi Arabia",
+    logo: sfdaLogo
   }, {
-    name: "UGANDA GMP",
-    logo: null
+    name: "INVIMA Colombia",
+    logo: invimaColombiaLogo
   }, {
-    name: "RWANDA GMP",
-    logo: null
+    name: "Colombia GMP",
+    logo: colombiaPotenciaLogo
+  }, {
+    name: "Cambodia GMP",
+    logo: cambodiaGmpLogo
+  }, {
+    name: "Rwanda GMP",
+    logo: rwandaGmpLogo
   }];
   const regions = [{
     name: "Brazil",
