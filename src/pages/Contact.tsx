@@ -1,16 +1,12 @@
 import Header from "@/components/Header";
-import ContactForm from "@/components/ContactForm";
-import FindUsOn from "@/components/FindUsOn";
+import ContactPageContent from "@/components/ContactPageContent";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
-        <ContactForm />
-        <FindUsOn />
-      </main>
+      <ContactPageContent />
       <Footer />
     </div>
   );

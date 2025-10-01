@@ -43,7 +43,7 @@ const ProductSearchAndDisplay = () => {
       const { data, error } = await supabase
         .from('products')
         .select('*')
-        .order('name');
+        .order('generic_name');
       
       if (error) throw error;
       
