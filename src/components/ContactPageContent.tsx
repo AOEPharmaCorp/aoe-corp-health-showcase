@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Mail, Phone, MapPin, Clock, Building, Users, Shield } from "lucide-react";
 import { useToast } from "./ui/use-toast";
-
 const ContactPageContent = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -14,51 +13,50 @@ const ContactPageContent = () => {
     company: "",
     phone: "",
     subject: "",
-    message: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Form submission logic here
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
+
       toast({
         title: "Message Sent Successfully",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours."
       });
-      
       setFormData({
         fullName: "",
         email: "",
         company: "",
         phone: "",
         subject: "",
-        message: "",
+        message: ""
       });
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
+      <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 bg-blue-800">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h1>
@@ -87,67 +85,38 @@ const ContactPageContent = () => {
                     <label htmlFor="fullName" className="text-sm font-medium">
                       Full Name *
                     </label>
-                    <Input
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      required
-                      placeholder="John Doe"
-                    />
+                    <Input id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required placeholder="John Doe" />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="text-sm font-medium">
                       Email Address *
                     </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="john@company.com"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com" />
                   </div>
 
                   <div>
                     <label htmlFor="company" className="text-sm font-medium">
                       Company
                     </label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="Your Company Name"
-                    />
+                    <Input id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company Name" />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="text-sm font-medium">
                       Phone Number
                     </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+1 (555) 000-0000"
-                    />
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+1 (555) 000-0000" />
                   </div>
 
                   <div>
                     <label htmlFor="subject" className="text-sm font-medium">
                       Subject *
                     </label>
-                    <Select
-                      value={formData.subject}
-                      onValueChange={(value) => setFormData({ ...formData, subject: value })}
-                      required
-                    >
+                    <Select value={formData.subject} onValueChange={value => setFormData({
+                    ...formData,
+                    subject: value
+                  })} required>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a subject" />
                       </SelectTrigger>
@@ -165,15 +134,7 @@ const ContactPageContent = () => {
                     <label htmlFor="message" className="text-sm font-medium">
                       Message *
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      placeholder="Tell us how we can help..."
-                      rows={6}
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us how we can help..." rows={6} />
                   </div>
 
                   <Button type="submit" className="w-full" disabled={isSubmitting}>
@@ -329,8 +290,6 @@ const ContactPageContent = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactPageContent;
