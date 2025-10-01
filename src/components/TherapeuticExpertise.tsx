@@ -79,7 +79,7 @@ const TherapeuticExpertise = () => {
 
         <div className="text-center mt-12">
           <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20 max-w-2xl mx-auto">
-            <CardContent className="p-6">
+            <CardContent className="p-6 my-0 py-0 px-0 mx-0">
               <h3 className="font-semibold text-lg text-foreground mb-2">
                 Comprehensive Manufacturing Network
               </h3>
