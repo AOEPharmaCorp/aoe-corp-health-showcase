@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import TherapeuticExpertise from "@/components/TherapeuticExpertise";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Globe, Target, Award, Building, Heart } from "lucide-react";
 const About = () => {
@@ -25,6 +26,9 @@ const About = () => {
 
         {/* About Section Component */}
         <AboutSection />
+
+        {/* Therapeutic Expertise Section */}
+        <TherapeuticExpertise />
 
         {/* Company Values */}
         <section className="py-16 bg-muted/50">
