@@ -79,16 +79,7 @@ const TherapeuticExpertise = () => {
 
         <div className="text-center mt-12">
           <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20 max-w-2xl mx-auto">
-            <CardContent className="p-6 my-0 py-0 px-0 mx-0">
-              <h3 className="font-semibold text-lg text-foreground mb-2">
-                Comprehensive Manufacturing Network
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Our therapeutic expertise is backed by state-of-the-art manufacturing facilities 
-                with specialized capabilities for each segment, ensuring the highest quality 
-                standards across all product lines.
-              </p>
-            </CardContent>
+            
           </Card>
         </div>
       </div>
