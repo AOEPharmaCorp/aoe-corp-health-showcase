@@ -1,4 +1,4 @@
-import { Building2, Mail, MapPin, Phone, Globe, Linkedin } from "lucide-react";
+import { Building2, Mail, MapPin, Phone, Globe, Linkedin, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import companyLogo from "@/assets/apc-logo-new.png";
 import sapAribaLogo from "@/assets/sap-ariba-logo.png";
@@ -55,24 +55,32 @@ const Footer = () => {
         {/* Connect With Us Section - Horizontal */}
         <div className="border-t border-border pt-8 pb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap">
               <h4 className="text-sm font-semibold text-foreground">Connect With Us:</h4>
               <a href="https://www.linkedin.com/company/aoe-pharma-corporation-llc/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-6 h-6" />
                 <span className="text-sm">LinkedIn</span>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="w-6 h-6" />
+                <span className="text-sm">Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Facebook className="w-6 h-6" />
+                <span className="text-sm">Facebook</span>
               </a>
             </div>
             
             <div className="flex flex-wrap items-center gap-6">
               <span className="text-sm font-semibold text-foreground">Find Us On:</span>
-              <a href="https://service.ariba.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <img src={sapAribaLogo} alt="SAP Ariba" className="h-5 w-auto" />
+              <a href="https://service.ariba.com/" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                <img src={sapAribaLogo} alt="SAP Ariba" className="h-6 w-auto object-contain" />
               </a>
-              <a href="https://zakupivli.pro/en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <img src={zakupivliLogo} alt="Zakupivli" className="h-5 w-auto" />
+              <a href="https://zakupivli.pro/en" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                <img src={zakupivliLogo} alt="Zakupivli" className="h-6 w-auto object-contain" />
               </a>
-              <a href="https://prozorro.gov.ua/en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <img src={prozorroLogo} alt="ProZorro" className="h-5 w-auto" />
+              <a href="https://prozorro.gov.ua/en" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                <img src={prozorroLogo} alt="ProZorro" className="h-6 w-auto object-contain" />
               </a>
             </div>
           </div>
