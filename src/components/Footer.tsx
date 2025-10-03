@@ -10,11 +10,10 @@ const Footer = () => {
         <div className="grid lg:grid-cols-3 gap-12 mb-12">
           <div className="space-y-6">
             <img src={companyLogo} alt="AOE Pharma Corporation" className="h-16 w-auto" />
-            <p className="max-w-md leading-relaxed text-muted-foreground">Leading provider of high-quality, affordable healthcare solutions globally. Enhancing quality of life through innovative pharmaceutical products since 2018.
-
-
-          </p>
-            <div className="text-sm text-accent font-medium">Leading provider of high-quality, affordable healthcare solutions globally. Enhancing quality of life through innovative pharmaceutical products since 2018.</div>
+            <p className="max-w-md leading-relaxed text-muted-foreground">Leading global provider of high-quality, affordable healthcare solutions. We are committed to enhancing quality of life through innovative pharmaceutical products and strategic services.</p>
+            <div className="text-sm text-accent font-medium">
+              Rising Strong in Global Healthcare Since 2018
+            </div>
           </div>
           
           <div className="space-y-6">
