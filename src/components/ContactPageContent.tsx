@@ -197,7 +197,7 @@ const ContactPageContent = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Monday - Friday: 9:00 AM - 6:00 PM</span>
+                    <span className="text-sm">Monday - Saturday: 10:00 AM - 5:00 PM (Indian Standard Time, GMT+5:30)</span>
                   </div>
                 </CardContent>
               </Card>
