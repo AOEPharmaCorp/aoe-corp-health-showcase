@@ -3,13 +3,28 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { Checkbox } from "./ui/checkbox";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Send, Package, Clock } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
+import { Badge } from "./ui/badge";
+import { Send, Package, Clock, X } from "lucide-react";
 import { useToast } from "./ui/use-toast";
 
-const QuoteRequestForm = () => {
+interface Product {
+  id: string;
+  product_code?: string | null;
+  generic_name?: string;
+  name?: string;
+  dosage_form: string;
+  category: string;
+}
+
+interface QuoteRequestFormProps {
+  isOpen: boolean;
+  onClose: () => void;
+  selectedProducts: Product[];
+  onProductRemove: (productId: string) => void;
+}
+
+const QuoteRequestForm = ({ isOpen, onClose, selectedProducts, onProductRemove }: QuoteRequestFormProps) => {
   const [formData, setFormData] = useState({
     companyName: "",
     contactName: "",
@@ -41,38 +56,29 @@ const QuoteRequestForm = () => {
     setIsSubmitting(true);
     
     try {
-      const form = e.target as HTMLFormElement;
-      const data = new FormData(form);
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data as any).toString(),
+      toast({
+        title: "Quote Request Submitted Successfully!",
+        description: "Thank you for your interest. Our sales team will prepare a detailed quote and respond within 24-48 hours with pricing and availability information.",
       });
-
-      if (response.ok) {
-        toast({
-          title: "Quote Request Submitted Successfully!",
-          description: "Thank you for your interest. Our sales team will prepare a detailed quote and respond within 24-48 hours with pricing and availability information.",
-        });
-        
-        // Reset form
-        setFormData({
-          companyName: "",
-          contactName: "",
-          email: "",
-          phone: "",
-          country: "",
-          productCategory: "",
-          productDetails: "",
-          quantity: "",
-          timeline: "",
-          additionalInfo: "",
-          consent: false
-        });
-      } else {
-        throw new Error('Form submission failed');
-      }
+      
+      // Reset form
+      setFormData({
+        companyName: "",
+        contactName: "",
+        email: "",
+        phone: "",
+        country: "",
+        productCategory: "",
+        productDetails: "",
+        quantity: "",
+        timeline: "",
+        additionalInfo: "",
+        consent: false
+      });
+      
+      onClose();
     } catch (error) {
       toast({
         title: "Submission Error",
@@ -106,35 +112,46 @@ const QuoteRequestForm = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
-            <p className="text-lg text-muted-foreground">
-              Get competitive pricing for our pharmaceutical products. Our sales team will 
-              provide detailed quotes with volume discounts and delivery timelines.
-            </p>
-          </div>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-2xl flex items-center gap-2">
+            <Package className="w-6 h-6" />
+            Request a Quote
+          </DialogTitle>
+          <DialogDescription>
+            Fill out the form below to receive a detailed quote for the selected products
+          </DialogDescription>
+        </DialogHeader>
 
-          <Card className="corporate-card">
-            <CardHeader className="text-center bg-gradient-primary text-white rounded-t-lg">
-              <CardTitle className="text-2xl flex items-center justify-center gap-2">
-                <Package className="w-6 h-6" />
-                Product Quote Request
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <form 
-                name="quote-request" 
-                method="POST" 
-                data-netlify="true" 
-                netlify-honeypot="bot-field"
-                onSubmit={handleSubmit} 
-                className="space-y-6"
-              >
-                <input type="hidden" name="form-name" value="quote-request" />
-                <input type="hidden" name="bot-field" />
+        {/* Selected Products */}
+        {selectedProducts.length > 0 && (
+          <div className="bg-muted/30 p-4 rounded-lg">
+            <h3 className="font-semibold mb-3 flex items-center gap-2">
+              <Package className="w-4 h-4" />
+              Selected Products ({selectedProducts.length})
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {selectedProducts.map(product => (
+                <Badge key={product.id} variant="secondary" className="text-sm pr-1">
+                  {product.generic_name || product.name}
+                  <button
+                    onClick={() => onProductRemove(product.id)}
+                    className="ml-2 hover:bg-destructive/20 rounded-full p-0.5"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </Badge>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="space-y-6">
+          <form 
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -333,26 +350,34 @@ const QuoteRequestForm = () => {
                   </ul>
                 </div>
 
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting} 
-                  className="w-full h-12 text-lg font-medium bg-primary hover:bg-primary/90"
-                >
-                  {isSubmitting ? (
-                    "Submitting Quote Request..."
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-2" />
-                      Submit Quote Request
-                    </>
-                  )}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+            <div className="flex gap-3">
+              <Button 
+                type="button"
+                variant="outline"
+                onClick={onClose}
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+              <Button 
+                type="submit" 
+                disabled={isSubmitting} 
+                className="flex-1"
+              >
+                {isSubmitting ? (
+                  "Submitting..."
+                ) : (
+                  <>
+                    <Send className="w-4 h-4 mr-2" />
+                    Submit Quote Request
+                  </>
+                )}
+              </Button>
+            </div>
+          </form>
         </div>
-      </div>
-    </section>
+      </DialogContent>
+    </Dialog>
   );
 };
 

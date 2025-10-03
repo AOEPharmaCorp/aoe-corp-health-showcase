@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Search, Filter, Plus, Eye, X } from "lucide-react";
+import { Search, Filter, Plus, Eye, X, ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "./ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "./ui/use-toast";
+import QuoteRequestForm from "./QuoteRequestForm";
 
 interface Product {
   id: string;
@@ -32,6 +33,7 @@ const ProductSearchAndDisplay = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [quote, setQuote] = useState<Product[]>([]);
+  const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -82,18 +84,18 @@ const ProductSearchAndDisplay = () => {
       filtered = filtered.filter(product => product.dosage_form === dosageFilter);
     }
 
-    // Limit to 20+ products per category for display
-    const categorizedProducts: { [key: string]: Product[] } = {};
+    // Limit to 5 products per dosage form
+    const formGroupedProducts: { [key: string]: Product[] } = {};
     filtered.forEach(product => {
-      if (!categorizedProducts[product.category]) {
-        categorizedProducts[product.category] = [];
+      if (!formGroupedProducts[product.dosage_form]) {
+        formGroupedProducts[product.dosage_form] = [];
       }
-      if (categorizedProducts[product.category].length < 25) {
-        categorizedProducts[product.category].push(product);
+      if (formGroupedProducts[product.dosage_form].length < 5) {
+        formGroupedProducts[product.dosage_form].push(product);
       }
     });
 
-    const limitedProducts = Object.values(categorizedProducts).flat();
+    const limitedProducts = Object.values(formGroupedProducts).flat();
     setFilteredProducts(limitedProducts);
   }, [searchTerm, categoryFilter, dosageFilter, products]);
 
@@ -130,7 +132,23 @@ const ProductSearchAndDisplay = () => {
       <div className="container mx-auto px-4">
         {/* Search and Filters */}
         <div className="bg-white p-6 rounded-lg shadow-sm border mb-8">
-          <h2 className="text-2xl font-bold mb-6">Search Products</h2>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-semibold">Search Products</h2>
+            {quote.length > 0 && (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">
+                  Showing 1-{filteredProducts.length} of {products.length} products
+                </span>
+                <Button 
+                  onClick={() => setIsQuoteFormOpen(true)}
+                  className="gap-2"
+                >
+                  <ShoppingCart className="w-4 h-4" />
+                  Request Quote ({quote.length})
+                </Button>
+              </div>
+            )}
+          </div>
           <div className="grid md:grid-cols-4 gap-4">
             <div className="md:col-span-2">
               <div className="relative">
@@ -146,7 +164,6 @@ const ProductSearchAndDisplay = () => {
             <div>
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
                 <SelectTrigger>
-                  <Filter className="w-4 h-4 mr-2" />
                   <SelectValue placeholder="All Categories" />
                 </SelectTrigger>
                 <SelectContent>
@@ -160,7 +177,6 @@ const ProductSearchAndDisplay = () => {
             <div>
               <Select value={dosageFilter} onValueChange={setDosageFilter}>
                 <SelectTrigger>
-                  <Filter className="w-4 h-4 mr-2" />
                   <SelectValue placeholder="All Forms" />
                 </SelectTrigger>
                 <SelectContent>
@@ -172,153 +188,138 @@ const ProductSearchAndDisplay = () => {
               </Select>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground mt-4">
-            Showing {filteredProducts.length} products
-          </p>
+          {quote.length > 0 && (
+            <div className="mt-4 flex items-center gap-2 text-sm">
+              <span className="font-medium text-primary">{quote.length} selected for quote</span>
+            </div>
+          )}
         </div>
 
-        {/* Quote Summary */}
-        {quote.length > 0 && (
-          <Card className="mb-8 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-lg">Quote Request ({quote.length} items)</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {quote.map(product => (
-                  <Badge key={product.id} variant="secondary" className="text-sm">
-                    {product.generic_name || product.name}
-                    <X 
-                      className="w-3 h-3 ml-1 cursor-pointer" 
-                      onClick={() => removeFromQuote(product.id)}
-                    />
-                  </Badge>
-                ))}
-              </div>
-              <Button onClick={() => setQuote([])}>
-                Clear All
-              </Button>
-            </CardContent>
-          </Card>
-        )}
-
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => (
-            <Card key={product.id} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div className="flex-1">
-                    <CardTitle className="text-lg leading-tight mb-2">
-                      {product.generic_name || product.name}
-                    </CardTitle>
-                    <CardDescription className="text-sm">
-                      {product.product_code && (
-                        <span className="font-medium text-primary">
-                          {product.product_code}
-                        </span>
-                      )}
-                    </CardDescription>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => {
+            const isInQuote = quote.find(p => p.id === product.id) !== undefined;
+            return (
+              <Card 
+                key={product.id} 
+                className={`hover:shadow-lg transition-all ${isInQuote ? 'border-2 border-primary' : ''}`}
+              >
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <CardTitle className="text-base leading-tight mb-2">
+                        {product.generic_name || product.name}
+                      </CardTitle>
+                      <CardDescription className="text-xs">
+                        {product.product_code && (
+                          <span className="font-medium">
+                            Code: {product.product_code}
+                          </span>
+                        )}
+                      </CardDescription>
+                    </div>
+                    <Badge variant="outline" className="text-xs whitespace-nowrap ml-2">
+                      {product.dosage_form}
+                    </Badge>
                   </div>
-                  <Badge variant="outline" className="text-xs">
-                    {product.dosage_form}
+                  <Badge className="w-fit text-xs" variant="secondary">
+                    {product.category}
                   </Badge>
-                </div>
-                <Badge className="w-fit" variant="secondary">
-                  {product.category}
-                </Badge>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="text-sm">
-                    <span className="font-medium">MOQ:</span> {product.moq || "Based on Standard Manufacturing Batch (Inquire for Details)"}
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-medium">Pricing:</span> {product.pricing || "As per FOB / CIF / CNF"}
-                  </div>
-                  <div className="flex gap-2 pt-2">
-                    <Button
-                      size="sm"
-                      onClick={() => addToQuote(product)}
-                      disabled={quote.find(p => p.id === product.id) !== undefined}
-                      className="flex-1"
-                    >
-                      <Plus className="w-4 h-4 mr-1" />
-                      {quote.find(p => p.id === product.id) ? "Added" : "Add to Quote"}
-                    </Button>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button size="sm" variant="outline" onClick={() => setSelectedProduct(product)}>
-                          <Eye className="w-4 h-4 mr-1" />
-                          View Details
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-2xl">
-                        <DialogHeader>
-                          <DialogTitle className="text-xl">
-                            {product.generic_name || product.name}
-                          </DialogTitle>
-                        </DialogHeader>
-                        <div className="space-y-6">
-                          <div className="flex gap-2">
-                            <Badge variant="outline">{product.dosage_form}</Badge>
-                            <Badge variant="secondary">{product.category}</Badge>
-                          </div>
-                          
-                          <div className="grid md:grid-cols-2 gap-6">
-                            <div>
-                              <h3 className="font-semibold text-lg mb-3 flex items-center">
-                                <div className="w-6 h-6 mr-2 rounded bg-primary/10 flex items-center justify-center">
-                                  📋
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="text-xs">
+                      <span className="font-medium">MOQ:</span> {product.moq || "Based on Standard Manufacturing Batch (Inquire for Details)"}
+                    </div>
+                    <div className="text-xs">
+                      <span className="font-medium">Pricing:</span> {product.pricing || "As per FOB / CIF / CNF"}
+                    </div>
+                    <div className="flex flex-col gap-2 pt-2">
+                      <Button
+                        size="sm"
+                        onClick={() => addToQuote(product)}
+                        disabled={isInQuote}
+                        variant={isInQuote ? "secondary" : "default"}
+                        className="w-full"
+                      >
+                        {isInQuote ? "Added" : "Add to Quote"}
+                      </Button>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button size="sm" variant="outline" onClick={() => setSelectedProduct(product)} className="w-full">
+                            View Details
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl">
+                          <DialogHeader>
+                            <DialogTitle className="text-xl">
+                              {product.generic_name || product.name}
+                            </DialogTitle>
+                            <DialogDescription>
+                              Product Code: {product.product_code || "N/A"}
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="space-y-6">
+                            <div className="flex gap-2">
+                              <Badge variant="outline">{product.dosage_form}</Badge>
+                              <Badge variant="secondary">{product.category}</Badge>
+                            </div>
+                            
+                            <div className="grid md:grid-cols-2 gap-6">
+                              <div>
+                                <h3 className="font-semibold text-lg mb-3 flex items-center">
+                                  <div className="w-6 h-6 mr-2 rounded bg-primary/10 flex items-center justify-center">
+                                    📋
+                                  </div>
+                                  Technical Specifications
+                                </h3>
+                                <div className="space-y-2 text-sm">
+                                  <p><span className="font-medium">Product Code:</span> {product.product_code || "Contact for details"}</p>
+                                  <p><span className="font-medium">Product Name:</span> {product.generic_name || product.name}</p>
+                                  <p><span className="font-medium">Dosage Form:</span> {product.dosage_form}</p>
+                                  <p><span className="font-medium">Category:</span> {product.category}</p>
                                 </div>
-                                Technical Specifications
-                              </h3>
-                              <div className="space-y-2 text-sm">
-                                <p><span className="font-medium">Product Code:</span> {product.product_code || "Contact for details"}</p>
-                                <p><span className="font-medium">Product Name:</span> {product.generic_name || product.name}</p>
-                                <p><span className="font-medium">Dosage Form:</span> {product.dosage_form}</p>
-                                <p><span className="font-medium">Category:</span> {product.category}</p>
+                              </div>
+                              
+                              <div>
+                                <h3 className="font-semibold text-lg mb-3 flex items-center">
+                                  <div className="w-6 h-6 mr-2 rounded bg-primary/10 flex items-center justify-center">
+                                    ⚖️
+                                  </div>
+                                  Regulatory Compliance
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                  Fully compliant as per the location of operation.
+                                </p>
                               </div>
                             </div>
                             
                             <div>
-                              <h3 className="font-semibold text-lg mb-3 flex items-center">
-                                <div className="w-6 h-6 mr-2 rounded bg-primary/10 flex items-center justify-center">
-                                  ⚖️
+                              <h3 className="font-semibold text-lg mb-3">Commercial Information</h3>
+                              <div className="grid md:grid-cols-2 gap-4">
+                                <div>
+                                  <span className="font-medium">MOQ:</span>
+                                  <p className="text-sm text-muted-foreground">
+                                    {product.moq || "Based on Standard Manufacturing Batch (Inquire for Details)"}
+                                  </p>
                                 </div>
-                                Regulatory Compliance
-                              </h3>
-                              <p className="text-sm text-muted-foreground">
-                                Complies with applicable regulatory standards in manufacturing country.
-                              </p>
-                            </div>
-                          </div>
-                          
-                          <div>
-                            <h3 className="font-semibold text-lg mb-3">Commercial Information</h3>
-                            <div className="grid md:grid-cols-2 gap-4">
-                              <div>
-                                <span className="font-medium">MOQ:</span>
-                                <p className="text-sm text-muted-foreground">
-                                  {product.moq || "Based on Standard Manufacturing Batch (Inquire for Details)"}
-                                </p>
-                              </div>
-                              <div>
-                                <span className="font-medium">Pricing:</span>
-                                <p className="text-sm text-muted-foreground">
-                                  {product.pricing || "As per FOB / CIF / CNF"}
-                                </p>
+                                <div>
+                                  <span className="font-medium">Pricing:</span>
+                                  <p className="text-sm text-muted-foreground">
+                                    {product.pricing || "As per FOB / CIF / CNF"}
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {filteredProducts.length === 0 && !isLoading && (
@@ -338,6 +339,14 @@ const ProductSearchAndDisplay = () => {
           </div>
         )}
       </div>
+
+      {/* Quote Request Form Dialog */}
+      <QuoteRequestForm 
+        isOpen={isQuoteFormOpen}
+        onClose={() => setIsQuoteFormOpen(false)}
+        selectedProducts={quote}
+        onProductRemove={removeFromQuote}
+      />
     </div>
   );
 };

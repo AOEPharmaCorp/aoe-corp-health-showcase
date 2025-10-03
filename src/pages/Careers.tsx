@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JobApplicationForm from "@/components/JobApplicationForm";
+import GeneralApplicationForm from "@/components/GeneralApplicationForm";
 import JobDetailsDialog from "@/components/JobDetailsDialog";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { Users, Heart, Globe, Award, Building, BookOpen, TrendingUp, Shield } fr
 import { useState } from "react";
 const Careers = () => {
   const [isApplicationFormOpen, setIsApplicationFormOpen] = useState(false);
+  const [isGeneralApplicationOpen, setIsGeneralApplicationOpen] = useState(false);
   const [isJobDetailsOpen, setIsJobDetailsOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<any>(null);
   const benefits = [{
@@ -192,7 +194,7 @@ const Careers = () => {
                 to contribute to global healthcare.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
+                <Button size="lg" onClick={() => setIsGeneralApplicationOpen(true)}>
                   Submit General Application
                 </Button>
                 <Button size="lg" variant="outline">
@@ -207,6 +209,12 @@ const Careers = () => {
       
       {/* Job Application Form */}
       {selectedJob && <JobApplicationForm isOpen={isApplicationFormOpen} onClose={() => setIsApplicationFormOpen(false)} jobTitle={selectedJob.title} />}
+      
+      {/* General Application Form */}
+      <GeneralApplicationForm 
+        isOpen={isGeneralApplicationOpen} 
+        onClose={() => setIsGeneralApplicationOpen(false)} 
+      />
       
       {/* Job Details Dialog */}
       {selectedJob && <JobDetailsDialog isOpen={isJobDetailsOpen} onClose={() => setIsJobDetailsOpen(false)} job={selectedJob} onApply={() => {
