@@ -228,9 +228,7 @@ const ContactPageContent = () => {
                     <p className="text-sm text-muted-foreground mb-1">
                       Quality assurance and regulatory compliance matters
                     </p>
-                    <a href="mailto:quality@aoepharma.com" className="text-sm text-primary hover:underline">
-                      quality@aoepharma.com
-                    </a>
+                    <a href="mailto:quality@aoepharma.com" className="text-sm text-primary hover:underline">Compliance@aoepharma.com</a>
                   </div>
 
                   <div>
