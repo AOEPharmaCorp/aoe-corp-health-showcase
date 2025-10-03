@@ -77,11 +77,7 @@ const TherapeuticExpertise = () => {
         })}
         </div>
 
-        <div className="text-center mt-12">
-          <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20 max-w-2xl mx-auto">
-            
-          </Card>
-        </div>
+        
       </div>
     </section>;
 };
