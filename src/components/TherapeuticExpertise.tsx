@@ -39,7 +39,7 @@ const TherapeuticExpertise = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-6 flex items-center justify-center gap-3 text-neutral-50">
-            <Microscope className="w-8 h-8 text-primary" />
+            
             Therapeutic Expertise Across Key Segments
           </h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-300">
