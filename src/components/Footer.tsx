@@ -74,13 +74,13 @@ const Footer = () => {
             <div className="flex flex-wrap items-center gap-6">
               <span className="text-sm font-semibold text-foreground">Find Us On:</span>
               <a href="https://service.ariba.com/" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                <img src={sapAribaLogo} alt="SAP Ariba" className="h-8 w-auto object-contain" />
+                <img src={sapAribaLogo} alt="SAP Ariba" className="h-10 w-auto object-contain" />
               </a>
               <a href="https://zakupivli.pro/en" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                <img src={zakupivliLogo} alt="Zakupivli" className="h-8 w-auto object-contain" />
+                <img src={zakupivliLogo} alt="Zakupivli Pro" className="h-10 w-auto object-contain" />
               </a>
               <a href="https://prozorro.gov.ua/en" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                <img src={prozorroLogo} alt="ProZorro" className="h-8 w-auto object-contain" />
+                <img src={prozorroLogo} alt="ProZorro" className="h-10 w-auto object-contain" />
               </a>
             </div>
           </div>
