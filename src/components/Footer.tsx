@@ -1,8 +1,8 @@
 import { Building2, Mail, MapPin, Phone, Globe, Linkedin, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import companyLogo from "@/assets/apc-logo-new.png";
-import sapAribaLogo from "@/assets/sap-ariba-logo.webp";
-import zakupivliLogo from "@/assets/zakupivli-pro-logo.webp";
+import sapAribaLogo from "@/assets/sap-ariba-logo.png";
+import zakupivliLogo from "@/assets/zakupivli-pro-logo.png";
 import prozorroLogo from "@/assets/prozorro-logo.svg";
 const Footer = () => {
   return <footer className="bg-background text-foreground border-t border-border">
@@ -74,13 +74,13 @@ const Footer = () => {
             <div className="flex flex-wrap items-center gap-6">
               <span className="text-sm font-semibold text-foreground">Find Us On:</span>
               <a href="https://service.ariba.com/" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                <img src={sapAribaLogo} alt="SAP Ariba" className="h-10 w-auto object-contain" />
+                <img src={sapAribaLogo} alt="SAP Ariba" className="h-6 w-auto object-contain" />
               </a>
               <a href="https://zakupivli.pro/en" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                <img src={zakupivliLogo} alt="Zakupivli Pro" className="h-10 w-auto object-contain" />
+                <img src={zakupivliLogo} alt="Zakupivli" className="h-6 w-auto object-contain" />
               </a>
               <a href="https://prozorro.gov.ua/en" target="_blank" rel="noopener noreferrer" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-                <img src={prozorroLogo} alt="ProZorro" className="h-10 w-auto object-contain" />
+                <img src={prozorroLogo} alt="ProZorro" className="h-6 w-auto object-contain" />
               </a>
             </div>
           </div>
@@ -92,8 +92,8 @@ const Footer = () => {
               © 2025 AOE Pharma Corporation. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Quality Assured</span>
-              <span>•</span>
+              
+              
               <span>Fully compliant with local regulatory requirements*</span>
             </div>
           </div>
