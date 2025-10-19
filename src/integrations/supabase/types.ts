@@ -18,36 +18,36 @@ export type Database = {
         Row: {
           category: string
           created_at: string
-          delivery_timeline: string | null
           dosage_form: string
+          generic_name: string
           id: string
           moq: string | null
-          name: string
           pricing: string | null
+          product_code: string | null
           serial_number: number | null
           updated_at: string
         }
         Insert: {
           category: string
           created_at?: string
-          delivery_timeline?: string | null
           dosage_form: string
+          generic_name: string
           id?: string
           moq?: string | null
-          name: string
           pricing?: string | null
+          product_code?: string | null
           serial_number?: number | null
           updated_at?: string
         }
         Update: {
           category?: string
           created_at?: string
-          delivery_timeline?: string | null
           dosage_form?: string
+          generic_name?: string
           id?: string
           moq?: string | null
-          name?: string
           pricing?: string | null
+          product_code?: string | null
           serial_number?: number | null
           updated_at?: string
         }
@@ -58,7 +58,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      normalize_component: {
+        Args: { component_text: string }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
