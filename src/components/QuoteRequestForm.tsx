@@ -5,6 +5,7 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 import { Badge } from "./ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
 import { Send, Package, Clock, X } from "lucide-react";
 import { useToast } from "./ui/use-toast";
 
@@ -15,6 +16,12 @@ interface Product {
   name?: string;
   dosage_form: string;
   category: string;
+}
+
+interface ProductDetails {
+  quantity: string;
+  deliveryLocation: string;
+  deliverySchedule: string;
 }
 
 interface QuoteRequestFormProps {
@@ -32,15 +39,26 @@ const QuoteRequestForm = ({ isOpen, onClose, selectedProducts, onProductRemove }
     phone: "",
     country: "",
     productCategory: "",
-    productDetails: "",
-    quantity: "",
-    timeline: "",
     additionalInfo: "",
     consent: false
   });
   
+  const [productDetails, setProductDetails] = useState<Record<string, ProductDetails>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  const updateProductDetail = (productId: string, field: keyof ProductDetails, value: string) => {
+    setProductDetails(prev => ({
+      ...prev,
+      [productId]: {
+        ...prev[productId],
+        quantity: prev[productId]?.quantity || "",
+        deliveryLocation: prev[productId]?.deliveryLocation || "",
+        deliverySchedule: prev[productId]?.deliverySchedule || "",
+        [field]: value
+      }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,12 +89,10 @@ const QuoteRequestForm = ({ isOpen, onClose, selectedProducts, onProductRemove }
         phone: "",
         country: "",
         productCategory: "",
-        productDetails: "",
-        quantity: "",
-        timeline: "",
         additionalInfo: "",
         consent: false
       });
+      setProductDetails({});
       
       onClose();
     } catch (error) {
@@ -124,25 +140,77 @@ const QuoteRequestForm = ({ isOpen, onClose, selectedProducts, onProductRemove }
           </DialogDescription>
         </DialogHeader>
 
-        {/* Selected Products */}
+        {/* Selected Products Table */}
         {selectedProducts.length > 0 && (
           <div className="bg-muted/30 p-4 rounded-lg">
             <h3 className="font-semibold mb-3 flex items-center gap-2">
               <Package className="w-4 h-4" />
               Selected Products ({selectedProducts.length})
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {selectedProducts.map(product => (
-                <Badge key={product.id} variant="secondary" className="text-sm pr-1">
-                  {product.generic_name || product.name}
-                  <button
-                    onClick={() => onProductRemove(product.id)}
-                    className="ml-2 hover:bg-destructive/20 rounded-full p-0.5"
-                  >
-                    <X className="w-3 h-3" />
-                  </button>
-                </Badge>
-              ))}
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Product Name</TableHead>
+                    <TableHead>Dosage Form</TableHead>
+                    <TableHead>Quantity *</TableHead>
+                    <TableHead>Delivery Location *</TableHead>
+                    <TableHead>Delivery Schedule *</TableHead>
+                    <TableHead className="w-12"></TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {selectedProducts.map(product => (
+                    <TableRow key={product.id}>
+                      <TableCell className="font-medium">
+                        {product.generic_name || product.name}
+                      </TableCell>
+                      <TableCell>{product.dosage_form}</TableCell>
+                      <TableCell>
+                        <Input
+                          type="text"
+                          placeholder="e.g., 10,000 units"
+                          value={productDetails[product.id]?.quantity || ""}
+                          onChange={(e) => updateProductDetail(product.id, "quantity", e.target.value)}
+                          required
+                          className="min-w-[150px]"
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Input
+                          type="text"
+                          placeholder="City, Country"
+                          value={productDetails[product.id]?.deliveryLocation || ""}
+                          onChange={(e) => updateProductDetail(product.id, "deliveryLocation", e.target.value)}
+                          required
+                          className="min-w-[150px]"
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Input
+                          type="text"
+                          placeholder="e.g., Within 2 weeks"
+                          value={productDetails[product.id]?.deliverySchedule || ""}
+                          onChange={(e) => updateProductDetail(product.id, "deliverySchedule", e.target.value)}
+                          required
+                          className="min-w-[150px]"
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => onProductRemove(product.id)}
+                          className="h-8 w-8"
+                        >
+                          <X className="w-4 h-4" />
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
           </div>
         )}
@@ -255,57 +323,6 @@ const QuoteRequestForm = ({ isOpen, onClose, selectedProducts, onProductRemove }
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="productDetails" className="text-base font-medium">
-                    Specific Products & Specifications *
-                  </Label>
-                  <Textarea
-                    id="productDetails"
-                    name="productDetails"
-                    required
-                    value={formData.productDetails}
-                    onChange={(e) => setFormData(prev => ({ ...prev, productDetails: e.target.value }))}
-                    rows={4}
-                    placeholder="Please specify the exact products you need, dosage forms, strengths, and any specific requirements..."
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="quantity" className="text-base font-medium">
-                      Estimated Quantity *
-                    </Label>
-                    <Input
-                      id="quantity"
-                      name="quantity"
-                      required
-                      value={formData.quantity}
-                      onChange={(e) => setFormData(prev => ({ ...prev, quantity: e.target.value }))}
-                      className="h-12"
-                      placeholder="e.g., 100,000 tablets, 50,000 bottles"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="timeline" className="text-base font-medium">
-                      Required Timeline *
-                    </Label>
-                    <select 
-                      name="timeline" 
-                      required 
-                      value={formData.timeline}
-                      onChange={(e) => setFormData(prev => ({ ...prev, timeline: e.target.value }))}
-                      className="h-12 px-3 border border-input bg-background rounded-md"
-                    >
-                      <option value="" disabled>Select timeline</option>
-                      {timelineOptions.map((timeline) => (
-                        <option key={timeline} value={timeline}>
-                          {timeline}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="additionalInfo" className="text-base font-medium">

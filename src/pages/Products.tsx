@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const Products = () => {
   return <div className="min-h-screen bg-background">
       <Header />
-      <ProductsHero className="bg-blue-800" />
+      <ProductsHero />
       <ProductSearchAndDisplay />
       <Footer />
     </div>;
