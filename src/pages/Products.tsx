@@ -2,16 +2,12 @@ import ProductSearchAndDisplay from "@/components/ProductSearchAndDisplay";
 import ProductsHero from "@/components/ProductsHero";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 const Products = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
-      <ProductsHero />
+      <ProductsHero className="bg-blue-800" />
       <ProductSearchAndDisplay />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Products;
